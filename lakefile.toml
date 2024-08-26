@@ -1,0 +1,10 @@
+name = "Calculemus2_es"
+defaultTargets = ["Calculemus2_es"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+
+[[lean_lib]]
+name = "Calculemus2_es"
+globs = ["src.+"]

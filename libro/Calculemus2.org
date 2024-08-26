@@ -1,0 +1,982 @@
+#+TITLE: Calculemus (Vol. 2: Ejercicios de demostración con Lean4)
+#+AUTHOR: José A. Alonso
+#+DATE: <2023-07-10 Sun>
+#+OPTIONS: ^:nil
+#+OPTIONS: num:t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./estilo.css" />
+#+LATEX_CLASS: book-noparts
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt,twoside]
+
+#+LATEX: \input Calculemus2_preambulo
+
+* Introducción
+
+Este libro es una recopilación de los ejercicios de demostración con
+Lean4 que se han ido publicando, desde el 10 de julio de 20023, en el
+blog [[https://www.glc.us.es][Calculemus]].
+
+La ordenación de los ejercicios es simplemente temporal según su fecha
+de publicación en Calculemus y el orden de los ejercicios en Calculemus
+responde a los que me voy encontrando en mis [[https://github.com/jaalonso/Lecturas_GLC][lecturas]].
+
+En cada ejercicio, se comienza proponiendo soluciones en lenguaje
+natural y, a continuación, se exponen distintas demostraciones con Lean4
+ordenadas desde las más detalladas a las más automáticas. Al final de
+cada ejercicio hay un enlace para interactuar con sus soluciones en
+[[https://lean.math.hhu.de/][Lean4 Web]].
+
+Las soluciones del libro están en [[https://github.com/jaalonso/Calculemus2][este repositorio de GitHub]].
+
+El libro se irá actualizando periódicamente con los nuevos ejercicios que se
+proponen diariamente en [[https://www.glc.us.es][Calculemus]].
+
+Este libro es una continuación de
++ [[https://raw.githubusercontent.com/jaalonso/DAO_con_Lean/master/DAO_con_Lean.pdf][DAO (Demostración Asistida por Ordenador) con Lean]] que es una
+  introducción a la demostración con Lean3 y
++ [[https://raw.githubusercontent.com/jaalonso/Calculemus/master/Calculemus.pdf][Calculemus (Vol. 1: Demostraciones con Isabelle/HOL y Lean3)]] que es la
+  recopilación de la primera parte de los ejercicios del blog con
+  demostraciones en Isabelle/HOL y Lean3.
+
+* Demostraciones de una propiedad de los números enteros
+
+** ∀ m n ∈ ℕ, Even n → Even (m * n)
+#+INCLUDE: "../src/El_producto_por_un_par_es_par.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/El_producto_por_un_par_es_par.lean][Lean 4 Web]].
+
+* Propiedades elementales de los números reales
+
+** En ℝ, (ab)c = b(ac)
+#+INCLUDE: "../src/Asociativa_conmutativa_de_los_reales.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Asociativa_conmutativa_de_los_reales.lean][Lean 4 Web]].
+
+** En ℝ, (cb)a = b(ac)
+#+INCLUDE: "../src/(cb)a_eq_b(ac).lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/(cb)a_eq_b(ac).lean][Lean 4 Web]].
+
+** En ℝ, a(bc) = b(ac)
+#+INCLUDE: "../src/a(bc)_eq_b(ac).lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/a(bc)_eq_b(ac).lean][Lean 4 Web]].
+
+** En ℝ, si ab = cd y e = f, entonces a(be) = c(df)
+#+INCLUDE: "../src/a(be)_eq_c(df).lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/a(be)_eq_c(df).lean][Lean 4 Web]].
+
+** En ℝ, si bc = ef, entonces ((ab)c)d = ((ae)f)d
+#+INCLUDE: "../src/Si_bc_eq_ef_entonces_((ab)c)d_eq_((ae)f)d.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Si_bc_eq_ef_entonces_((ab)c)d_eq_((ae)f)d.lean][Lean 4 Web]].
+
+** En ℝ, si c = ba-d y d = ab, entonces c = 0
+#+INCLUDE: "../src/Si_c_eq_ba-d_y_d_eq_ab_entonces_c_eq_0.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Si_c_eq_ba-d_y_d_eq_ab_entonces_c_eq_0.lean][Lean 4 Web]].
+
+** En ℝ, (a+b)(a+b) = aa+2ab+bb
+#+INCLUDE: "../src/(a+b)(a+b)_eq_aa+2ab+bb.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/(a+b)(a+b)_eq_aa+2ab+bb.lean][Lean 4 Web]].
+
+** En ℝ, (a+b)(c+d) = ac+ad+bc+bd
+#+INCLUDE: "../src/(a+b)(c+d)_eq_ac+ad+bc+bd.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/(a+b)(c+d)_eq_ac+ad+bc+bd.lean][Lean 4 Web]].
+
+** En ℝ, (a+b)(a-b) = a^2-b^2
+#+INCLUDE: "../src/(a+b)(a-b)_eq_aa-bb.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/(a+b)(a-b)_eq_aa-bb.lean][Lean 4 Web]].
+
+** En ℝ, si c = da+b y b = ad, entonces c = 2ad
+#+INCLUDE: "../src/Si_c_eq_da+b_y_b_eq_ad_entonces_c_eq_2ad.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Si_c_eq_da+b_y_b_eq_ad_entonces_c_eq_2ad.lean][Lean 4 Web]].
+
+** En ℝ, si a+b = c, entonces (a+b)(a+b) = ac+bc
+#+INCLUDE: "../src/Sia+b_eq_c_entonces_(a+b)(a+b)_eq_ac+bc.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Sia+b_eq_c_entonces_(a+b)(a+b)_eq_ac+bc.lean][Lean 4 Web]].
+
+** Si x e y son sumas de dos cuadrados, entonces xy también lo es
+#+INCLUDE: "../src/Producto_de_suma_de_cuadrados.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_de_suma_de_cuadrados.lean][Lean 4 Web]]
+
+** En ℝ, x² + y² = 0 ↔ x = 0 ∧ y = 0
+#+INCLUDE: "../src/Suma_nula_de_dos_cuadrados.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_nula_de_dos_cuadrados.lean][Lean 4 Web]]
+
+** En ℝ, x² = 1 → x = 1 ∨ x = -1
+#+INCLUDE: "../src/Cuadrado_igual_a_uno.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cuadrado_igual_a_uno.lean.lean][Lean 4 Web]]
+
+** En ℝ, x² = y² → x = y ∨ x = -y
+#+INCLUDE: "../src/Cuadrado_igual_a_cuadrado.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cuadrado_igual_a_cuadrado.lean][Lean 4 Web]]
+
+** En ℝ, |a| = |a - b + b|
+#+INCLUDE: "../src/Demostracion_por_congruencia.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Demostracion_por_congruencia.lean][Lean 4 Web]]
+
+* Propiedades elementales de los monoides
+
+** En los monoides, los inversos a la izquierda y a la derecha son iguales
+#+INCLUDE "../src/En_los_monoides_los_inversos_a_la_izquierda_y_a_la_derecha_son_iguales.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/En_los_monoides_los_inversos_a_la_izquierda_y_a_la_derecha_son_iguales.lean][Lean 4 Web]].
+
+** Producto de potencias de la misma base en monoides
+#+INCLUDE: "../src/Producto_de_potencias_de_la_misma_base_en_monoides.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_de_potencias_de_la_misma_base_en_monoides.lean][Lean 4 Web]].
+
+** Equivalencia de inversos iguales al neutro
+#+INCLUDE: "../src/Equivalencia_de_inversos_iguales_al_neutro.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Equivalencia_de_inversos_iguales_al_neutro.lean][Lean 4 Web]].
+
+** Unicidad de inversos en monoides
+#+INCLUDE: "../src/Unicidad_de_inversos_en_monoides.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Unicidad_de_inversos_en_monoides.lean][Lean 4 Web]].
+
+** Caracterización de producto igual al primer factor
+#+INCLUDE: "../src/Caracterizacion_de_producto_igual_al_primer_factor.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Caracterizacion_de_producto_igual_al_primer_factor.lean][Lean 4 Web]].
+
+** Si M es un monoide, a ∈ M y m, n ∈ ℕ, entonces $a^{m·n} = (a^m)^n$
+#+INCLUDE: "../src/Potencias_de_potencias_en_monoides.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Potencias_de_potencias_en_monoides.lean][Lean 4 Web]].
+
+** Los monoides booleanos son conmutativos
+#+INCLUDE: "../src/Los_monoides_booleanos_son_conmutativos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Los_monoides_booleanos_son_conmutativos.lean][Lean 4 Web]].
+
+* Propiedades elementales de los grupos
+
+** Unicidad del elemento neutro en los grupos
+#+INCLUDE: "../src/Unicidad_del_elemento_neutro_en_los_grupos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Unicidad_del_elemento_neutro_en_los_grupos.lean][Lean 4 Web]].
+
+** Si G es un grupo y a ∈ G, entonces aa⁻¹ = 1
+#+INCLUDE: "../src/Producto_por_inverso.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_por_dos.lean][Lean 4 Web]].
+
+** Si G es un grupo y a ∈ G, entonces a·1 = a
+#+INCLUDE: "../src/Producto_por_uno.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_por_uno.lean][Lean 4 Web]].
+
+** Si G es un grupo y a, b ∈ G tales que ab = 1 entonces a⁻¹ = b
+#+INCLUDE: "../src/CS_de_inverso.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CS_de_inverso.lean][Lean 4 Web]].
+
+** Si G es un grupo y a, b ∈ G, entonces (ab)⁻¹ = b⁻¹a⁻¹
+#+INCLUDE: "../src/Inverso_del_producto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inverso_del_producto.lean][Lean 4 Web]].
+
+** Si G es un grupo y a, b ∈ G tales que ab = 1 entonces a⁻¹ = b
+#+INCLUDE: "../src/Unicidad_de_los_inversos_en_los_grupos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Unicidad_de_los_inversos_en_los_grupos.lean][Lean 4 Web]].
+
+** Si G es un grupo y a, b ∈ G, entonces (ab)⁻¹ = b⁻¹a⁻¹
+#+INCLUDE: "../src/Inverso_del_producto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inverso_del_producto.lean][Lean 4 Web]].
+
+** Si G un grupo y a ∈ G, entonces (a⁻¹)⁻¹ = a
+#+INCLUDE: "../src/Inverso_del_inverso_en_grupos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inverso_del_inverso_en_grupos.lean][Lean 4 Web]].
+
+** Si G es un grupo y a, b, c ∈ G tales que a·b = a·c, entonces b = c
+#+INCLUDE: "../src/Propiedad_cancelativa_en_grupos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_cancelativa_en_grupos.lean][Lean 4 Web]].
+
+* Propiedades elementales de los anillos
+
+** Si R es un anillo y a ∈ R, entonces a + 0 = a
+#+INCLUDE: "../src/Suma_con_cero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_con_cero.lean][Lean 4 Web]].
+
+** Si R es un anillo y a ∈ R, entonces a + -a = 0
+#+INCLUDE: "../src/Suma_con_opuesto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_con_opuesto.lean][Lean 4 Web]].
+
+** Si R es un anillo y a, b ∈ R, entonces -a + (a + b) = b
+#+INCLUDE: "../src/Opuesto_se_cancela_con_la_suma_por_la_izquierda.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Opuesto_se_cancela_con_la_suma_por_la_izquierda.lean][Lean 4 Web]].
+
+** Si R es un anillo y a, b ∈ R, entonces (a + b) + -b = a
+#+INCLUDE: "../src/Opuesto_se_cancela_con_la_suma_por_la_derecha.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Opuesto_se_cancela_con_la_suma_por_la_derecha.lean][Lean 4 Web]].
+
+** Si R es un anillo y a, b, c ∈ R tales que a+b=a+c, entonces b=c
+#+INCLUDE: "../src/Cancelativa_izquierda.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cancelativa_izquierda.lean][Lean 4 Web]].
+
+** Si R es un anillo y a, b, c ∈ R tales que a+b=c+b, entonces a=c
+#+INCLUDE: "../src/Cancelativa_derecha.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cancelativa_derecha.lean][Lean 4 Web]].
+
+** Si R es un anillo y a ∈ R, entonces a.0 = 0
+#+INCLUDE: "../src/Multiplicacion_por_cero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Multiplicacion_por_cero.lean][Lean 4 Web]].
+
+** Si R es un anillo y a ∈ R, entonces 0.a = 0
+#+INCLUDE: "../src/Multiplicacion_por_cero_izquierda.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Multiplicacion_por_cero_izquierda.lean][Lean 4 Web]].
+
+** Si R es un anillo y a, b ∈ R tales que a+b=0, entonces -a=b
+#+INCLUDE: "../src/Opuesto_ig_si_suma_ig_cero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Opuesto_ig_si_suma_ig_cero.lean][Lean 4 Web]].
+
+** Si R es un anillo y a, b ∈ R tales que a+b=0, entonces a=-b
+#+INCLUDE: "../src/Ig_opuesto_si_suma_ig_cero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Ig_opuesto_si_suma_ig_cero.lean][Lean 4 Web]].
+
+** Si R es un anillo, entonces -0 = 0
+#+INCLUDE: "../src/Opuesto_del_cero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Opuesto_del_cero.lean][Lean 4 Web]].
+
+** Si R es un anillo y a ∈ R, entonces -(-a) = a
+#+INCLUDE: "../src/Opuesto_del_opuesto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Opuesto_del_opuesto.lean][Lean 4 Web]].
+
+** Si R es un anillo y a, b ∈ R, entonces a - b = a + -b
+#+INCLUDE: "../src/Resta_igual_suma_opuesto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Resta_igual_suma_opuesto.lean][Lean 4 Web]].
+
+** Si R es un anillo y a ∈ R, entonces a - a = 0
+#+INCLUDE: "../src/Resta_consigo_mismo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Resta_consigo_mismo.lean][Lean 4 Web]].
+
+** En los anillos, 1 + 1 = 2
+#+INCLUDE: "../src/Uno_mas_uno_es_dos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Uno_mas_uno_es_dos.lean][Lean 4 Web]].
+
+** Si R es un anillo y a ∈ R, entonces 2a = a+a
+#+INCLUDE: "../src/Producto_por_dos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_por_dos.lean][Lean 4 Web]].
+
+* Propiedades de orden en los números reales
+
+** En ℝ, si a ≤ b, b < c, c ≤ d y d < e, entonces a < e
+#+INCLUDE: "../src/Cadena_de_desigualdades.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cadena_de_desigualdades.lean][Lean 4 Web]].
+
+** En ℝ, si 2a ≤ 3b, 1 ≤ a y d = 2, entonces d + a ≤ 5b
+#+INCLUDE: "../src/Inecuaciones.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inecuaciones.lean][Lean 4 Web]].
+
+** En ℝ, si 1 ≤ a y b ≤ d, entonces 2 + a + eᵇ ≤ 3a + eᵈ
+#+INCLUDE: "../src/Inecuaciones_con_exponenciales.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inecuaciones_con_exponenciales.lean][Lean 4 Web]].
+
+** En ℝ, si a ≤ b y c < d, entonces a + eᶜ + f ≤ b + eᵈ + f
+#+INCLUDE: "../src/Inecuaciones_con_exponenciales_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inecuaciones_con_exponenciales_2.lean][Lean 4 Web]]
+
+** En ℝ, si d ≤ f, entonces c + e^(a + d) ≤ c + e^(a + f)
+#+INCLUDE: "../src/Inecuaciones_con_exponenciales_3.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inecuaciones_con_exponenciales_3.lean][Lean 4 Web]]
+
+** En ℝ, si a ≤ b, entonces log(1+e^a) ≤ log(1+e^b)
+#+INCLUDE: "../src/Desigualdad_logaritmica.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Desigualdad_logaritmica.lean][Lean 4 Web]]
+
+** En ℝ, si a ≤ b, entonces c - e^b ≤ c - e^a
+#+INCLUDE: "../src/Inecuaciones_con_exponenciales_4.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Desigualdad_logaritmica.lean][Lean 4 Web]]
+
+** En ℝ, 2ab ≤ a² + b²
+#+INCLUDE: "../src/Doble_me_suma_cuadrados.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Desigualdad_logaritmica.lean][Lean 4 Web]]
+
+** En ℝ, |ab| ≤ (a²+b²)/2]
+#+INCLUDE: "../src/Ejercicio_desigualdades_absolutas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Ejercicio_desigualdades_absolutas.lean][Lean 4 Web]]
+
+** En ℝ, min(a,b) = min(b,a)
+#+INCLUDE: "../src/Conmutatividad_del_minimo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Conmutatividad_del_minimo.lean][Lean 4 Web]]
+
+** En ℝ, max(a,b) = max(b,a)
+#+INCLUDE: "../src/Conmutatividad_del_maximo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Conmutatividad_del_maximo.lean][Lean 4 Web]]
+
+** En ℝ, min(min(a,b),c) = min(a,min(b,c))
+#+INCLUDE: "../src/Asociatividad_del_minimo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Asociatividad_del_minimo.lean][Lean 4 Web]]
+
+** En ℝ, min(a,b)+c = min(a+c,b+c)
+#+INCLUDE: "../src/Minimo_de_suma.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Minimo_de_suma.lean][Lean 4 Web]]
+
+** En ℝ, |a| - |b| ≤ |a - b|
+#+INCLUDE: "../src/abs_sub.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/abs_sub.lean][Lean 4 Web]]
+
+** En ℝ, {0 < ε, ε ≤ 1, |x| < ε, |y| < ε} ⊢ |xy| < ε
+#+INCLUDE: "../src/Acotacion_del_producto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Acotacion_del_producto.lean][Lean 4 Web]]
+
+** En ℝ, a < b → ¬(b < a)
+#+INCLUDE: "../src/Asimetria_de_menor.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Asimetria_de_menor.lean][Lean 4 Web]]
+
+** Hay algún número real entre 2 y 3
+#+INCLUDE: "../src/Existencia_de_valor_intermedio.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Existencia_de_valor_intermedio.lean][Lean 4 Web]]
+
+** Si (∀ε > 0)[x ≤ ε], entonces x ≤ 0
+#+INCLUDE: "../src/Condicion_para_no_positivo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Condicion_para_no_positivo.lean][Lean 4 Web]]
+
+** Si 0 < 0, entonces a > 37 para cualquier número a
+#+INCLUDE: "../src/Principio_de_explosion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Principio_de_explosion.lean][Lean 4 Web]]
+
+** {x ≤ y, y ≰ x} ⊢ x ≤ y ∧ x ≠ y
+#+INCLUDE: "../src/Introduccion_de_la_conjuncion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Introduccion_de_la_conjuncion.lean][Lean 4 Web]]
+
+** x ≤ y ∧ x ≠ y ⊢ y ≰ x
+#+INCLUDE: "../src/Eliminacion_de_la_conjuncion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Eliminacion_de_la_conjuncion.lean][Lean 4 Web]]
+
+** (∃x ∈ ℝ)[2 < x < 3]
+#+INCLUDE: "../src/Entre_2_y_3.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Entre_2_y_3.lean][Lean 4 Web]]
+
+** Si (∃z ∈ ℝ)[x < z < y], entonces x < y
+#+INCLUDE: "../src/Menor_por_intermedio.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Menor_por_intermedio.lean][Lean 4 Web]]
+
+** En ℝ, x ≤ y ∧ x ≠ y → x ≤ y ∧ y ≰ x
+#+INCLUDE: "../src/Entre_desigualdades.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Entre_desigualdades.lean][Lean 4 Web]]
+
+** En ℝ, si x ≤ y, entonces y ≰ x ↔ x ≠ y
+#+INCLUDE: "../src/CNS_de_distintos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CNS_de_distintos.lean][Lean 4 Web]]
+
+** Si |x + 3| < 5, entonces -8 < x < 2
+#+INCLUDE: "../src/Acotacion_del_valor_absoluto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Acotacion_del_valor_absoluto.lean][Lean 4 Web]]
+
+** En ℝ, y > x² ⊢ y > 0 ∨ y < -1
+#+INCLUDE: "../src/Introduccion_de_la_disyuncion_1.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Introduccion_de_la_disyuncion_1.lean][Lean 4 Web]]
+
+** En ℝ, -y > x² + 1 ⊢ y > 0 ∨ y < -1
+#+INCLUDE: "../src/Introduccion_de_la_disyuncion_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Introduccion_de_la_disyuncion_2.lean][Lean 4 Web]]
+
+** En ℝ, si x < |y|, entonces x < y ó x < -y
+#+INCLUDE: "../src/Eliminacion_de_la_disyuncion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Eliminacion_de_la_disyuncion.lean][Lean 4 Web]]
+
+** En ℝ, x ≤ |x|
+#+INCLUDE: "../src/Cota_inf_de_abs.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cota_inf_de_abs.lean][Lean 4 Web]]
+
+** En ℝ, -x ≤ |x|
+#+INCLUDE: "../src/Cota_inf2_de_abs.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cota_inf2_de_abs.lean][Lean 4 Web]]
+
+** En ℝ, |x + y| ≤ |x| + |y|
+#+INCLUDE: "../src/Desigualdad_triangular_para_valor_absoluto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Desigualdad_triangular_para_valor_absoluto.lean.lean][Lean 4 Web]]
+
+** En ℝ, si x ≠ 0 entonces x < 0 ó x > 0
+#+INCLUDE: "../src/Eliminacion_de_la_disyuncion_con_rcases.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Eliminacion_de_la_disyuncion_con_rcases.lean.lean][Lean 4 Web]]
+
+** Si (∃ x, y ∈ ℝ)[z = x² + y² ∨ z = x² + y² + 1], entonces z ≥ 0
+#+INCLUDE: "../src/Desigualdad_con_rcases.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Desigualdad_con_rcases.lean.lean][Lean 4 Web]]
+
+** En ℝ, si 1 < a, entonces a < aa
+#+INCLUDE: "../src/Demostracion_por_conversion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Demostracion_por_conversion.lean][Lean 4 Web]]
+
+** Si x, y ∈ ℝ tales que (∀ z)[y < z → x ≤ z], entonces x ≤ y
+#+INCLUDE: "../src/Propiedad_de_la_densidad_de_los_reales.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_de_la_densidad_de_los_reales.lean][Lean 4 Web]].
+
+* Divisibilidad
+
+** Si x,y,z ∈ ℕ, entonces x ∣ yxz
+#+INCLUDE: "../src/Divisibilidad_de_producto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Divisibilidad_de_producto.lean][Lean 4 Web]]
+
+** Si x divide a w, también divide a y(xz)+x²+w²
+#+INCLUDE: "../src/Ejercicio_de_divisibilidad.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Ejercicio_de_divisibilidad.lean][Lean 4 Web]]
+
+** Transitividad de la divisibilidad
+#+INCLUDE: "../src/Transitividad_de_la_divisibilidad.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Transitividad_de_la_divisibilidad.lean][Lean 4 Web]]
+
+** Si a divide a b y a c, entonces divide a b+c
+#+INCLUDE: "../src/Suma_divisible.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_divisible.lean][Lean 4 Web]]
+
+** Conmutatividad del máximo común divisor
+#+INCLUDE: "../src/Conmutatividad_del_gcd.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Conmutatividad_del_gcd.lean][Lean 4 Web]]
+
+** Si (m ∣ n ∧ m ≠ n), entonces (m ∣ n ∧ ¬(n ∣ m))
+#+INCLUDE: "../src/Uso_de_conjuncion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Uso_de_conjuncion.lean][Lean 4 Web]]
+
+** Existen números primos m y n tales que 4 < m < n < 10
+#+INCLUDE: "../src/Primos_intermedios.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Primos_intermedios.lean][Lean 4 Web]]
+
+** 3 divide al máximo común divisor de 6 y 15
+#+INCLUDE: "../src/Divisor_del_mcd.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Divisor_del_mcd.lean][Lean 4 Web]]
+
+** Si m divide a n o a k, entonces m divide a nk
+#+INCLUDE: "../src/CS_de_divisibilidad_del_producto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CS_de_divisibilidad_del_producto.lean.lean][Lean 4 Web]]
+
+** Existen infinitos números primos
+#+INCLUDE: "../src/Infinitud_de_primos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Infinitud_de_primos.lean][Lean 4 Web]]
+
+** Si n² es par, entonces n es par
+#+INCLUDE: "../src/Par_si_cuadrado_par.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Par_si_cuadrado_par.lean][Lean 4 Web]]
+
+** La raíz cuadrada de 2 es irracional
+#+INCLUDE: "../src/Irracionalidad_de_la_raiz_cuadrada_de_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Irracionalidad_de_la_raiz_cuadrada_de_2.lean][Lean 4 Web]]
+
+** Un número es par si y solo si lo es su cuadrado
+#+INCLUDE: "../src/Un_numero_es_par_syss_lo_es_su_cuadrado.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Un_numero_es_par_syss_lo_es_su_cuadrado.lean][Lean 4 Web]].
+
+* Retículos
+
+** En los retículos, x ⊓ y = y ⊓ x
+#+INCLUDE: "../src/Conmutatividad_del_infimo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Conmutatividad_del_infimo.lean][Lean 4 Web]]
+
+** En los retículos, x ⊔ y = y ⊔ x
+#+INCLUDE: "../src/Conmutatividad_del_supremo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Conmutatividad_del_supremo.lean][Lean 4 Web]]
+
+** En los retículos, (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z)
+#+INCLUDE: "../src/Asociatividad_del_infimo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Asociatividad_del_infimo.lean][Lean 4 Web]]
+
+** En los retículos, (x ⊔ y) ⊔ z = x ⊔ (y ⊔ z)
+#+INCLUDE: "../src/Asociatividad_del_supremo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Asociatividad_del_supremo.lean][Lean 4 Web]]
+
+** En los retículos, x ⊓ (x ⊔ y) = x
+#+INCLUDE: "../src/Leyes_de_absorcion_1.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Leyes_de_absorcion_1.lean][Lean 4 Web]]
+
+** En los retículos, x ⊔ (x ⊓ y) = x
+#+INCLUDE: "../src/Leyes_de_absorcion_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Leyes_de_absorcion_2.lean][Lean 4 Web]]
+
+** En los retículos, una distributiva del ínfimo implica la otra
+#+INCLUDE: "../src/Propiedad_distributiva_1.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_distributiva_1.lean][Lean 4 Web]]
+
+** En los retículos, una distributiva del supremos implica la otra
+#+INCLUDE: "../src/Propiedad_distributiva_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_distributiva_2.lean][Lean 4 Web]]
+
+* Relaciones de orden
+
+** En los órdenes parciales, a < b ↔ a ≤ b ∧ a ≠ b
+#+INCLUDE: "../src/Caracterizacion_de_menor_en_ordenes_parciales.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Caracterizacion_de_menor_en_ordenes_parciales.lean][Lean 4 Web]]
+
+** Si ≤ es un preorden, entonces < es irreflexiva
+#+INCLUDE: "../src/Preorden_es_irreflexivo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Preorden_es_irreflexivo.lean][Lean 4 Web]]
+
+** Si ≤ es un preorden, entonces < es transitiva
+#+INCLUDE: "../src/Preorden_transitiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Preorden_transitiva.lean][Lean 4 Web]]
+
+* Relaciones de equivalencia
+
+** La congruencia módulo 2 es una relación de equivalencia
+#+INCLUDE: "../src/La_congruencia_modulo_2_es_una_relacion_de_equivalencia.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_congruencia_modulo_2_es_una_relacion_de_equivalencia.lean][Lean 4 Web]].
+
+* Anillos ordenados
+
+** En los anillos ordenados, a ≤ b → 0 ≤ b - a
+#+INCLUDE: "../src/Ejercicio_sobre_anillos_ordenados_1.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Ejercicio_sobre_anillos_ordenados_1.lean][Lean 4 Web]]
+
+** En los anillos ordenados, 0 ≤ b - a → a ≤ b
+#+INCLUDE: "../src/Ejercicio_sobre_anillos_ordenados_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Ejercicio_sobre_anillos_ordenados_2.lean][Lean 4 Web]]
+
+** En los anillos ordenados, {a ≤ b, 0 ≤ c} ⊢ ac ≤ bc
+#+INCLUDE: "../src/Ejercicio_sobre_anillos_ordenados_3.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Ejercicio_sobre_anillos_ordenados_3.lean][Lean 4 Web]]
+
+* Espacios métricos
+
+** En los espacios métricos, dist(x,y) ≥ 0
+#+INCLUDE: "../src/Ejercicio_en_espacios_metricos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Ejercicio_en_espacios_metricos.lean][Lean 4 Web]]
+
+* Funciones reales
+
+** La suma de una cota superior de f y una cota superior de g es una cota superior de f+g
+#+INCLUDE: "../src/Suma_de_cotas_superiores.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_de_cotas_superiores.lean][Lean 4 Web]]
+
+** La suma de una cota inferior de f y una cota inferior de g es una cota inferior de f+g
+#+INCLUDE: "../src/Suma_de_cotas_inferiores.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_de_cotas_inferiores.lean][Lean 4 Web]]
+
+** El producto de funciones no negativas es no negativo
+#+INCLUDE: "../src/Producto_de_funciones_no_negativas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_de_funciones_no_negativas.lean][Lean 4 Web]]
+
+** Si a es una cota superior no negativa de f y b es es una cota superior de la función no negativa g, entonces ab es una cota superior de fg
+#+INCLUDE: "../src/Cota_superior_del_producto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cota_superior_del_producto.lean][Lean 4 Web]]
+
+** La suma de dos funciones acotadas superiormente también lo está
+#+INCLUDE: "../src/Suma_de_funciones_acotadas_superiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src//Suma_de_funciones_acotadas_superiormente.lean][Lean 4 Web]]
+
+** La suma de dos funciones acotadas inferiormente también lo está
+#+INCLUDE: "../src/Suma_de_funciones_acotadas_inferiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_de_funciones_acotadas_inferiormente.lean][Lean 4 Web]]
+
+** Si a es una cota superior de f y c ≥ 0, entonces ca es una cota superior de cf
+#+INCLUDE: "../src/Cota_superior_de_producto_por_escalar.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cota_superior_de_producto_por_escalar.lean][Lean 4 Web]]
+
+** Si c ≥ 0 y f está acotada superiormente, entonces c·f también lo está
+#+INCLUDE: "../src/Producto_por_escalar_acotado_superiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_por_escalar_acotado_superiormente.lean][Lean 4 Web]]
+
+** Si para cada a existe un x tal que f(x) > a, entonces f no tiene cota superior
+#+INCLUDE: "../src/Funcion_no_acotada_superiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Funcion_no_acotada_superiormente.lean][Lean 4 Web]]
+
+** Si para cada a existe un x tal que f(x) < a, entonces f no tiene cota inferior
+#+INCLUDE: "../src/Funcion_no_acotada_inferiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Funcion_no_acotada_inferiormente.lean][Lean 4 Web]]
+
+** La función identidad no está acotada superiormente
+#+INCLUDE: "../src/La_identidad_no_esta_acotada_superiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_identidad_no_esta_acotada_superiormente.lean][Lean 4 Web]]
+
+** Si f no está acotada superiormente, entonces (∀a)(∃x)[f(x) > a]
+#+INCLUDE: "../src/CN_no_acotada_superiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CN_no_acotada_superiormente.lean][Lean 4 Web]]
+
+** Si ¬(∀a)(∃x)[f(x) > a]​, entonces f está acotada superiormente
+#+INCLUDE: "../src/CS_de_acotada_superiormente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CS_de_acotada_superiormente.lean][Lean 4 Web]]
+
+** Suma de funciones monótonas
+#+INCLUDE: "../src/Suma_de_funciones_monotonas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_de_funciones_monotonas.lean][Lean 4 Web]]
+
+** Si c es no negativo y f es monótona, entonces cf es monótona.
+#+INCLUDE: "../src/Producto_de_un_positivo_por_una_funcion_monotona.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_de_un_positivo_por_una_funcion_monotona.lean][Lean 4 Web]]
+
+** La composición de dos funciones monótonas es monótona
+#+INCLUDE: "../src/Composicion_de_funciones_monotonas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Composicion_de_funciones_monotonas.lean][Lean 4 Web]]
+
+** Si f es monótona y f(a) < f(b), entonces a < b
+#+INCLUDE: "../src/CN_de_monotona.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CN_de_monotona.lean][Lean 4 Web]]
+
+** Si a, b ∈ ℝ tales que a ≤ b y f(b) < f(a), entonces f no es monótona
+#+INCLUDE: "../src/CS_de_no_monotona.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CS_de_no_monotona.lean][Lean 4 Web]]
+
+** No para toda f : ℝ → ℝ monótona, (∀a, b)[f(a) ≤ f(b) → a ≤ b]
+#+INCLUDE: "../src/Propiedad_de_monotona.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_de_monotona.lean][Lean 4 Web]]
+
+** Si f no es monótona, entonces ∃x∃y[x ≤ y ∧ f(y) < f(x)]
+#+INCLUDE: "../src/CN_de_no_monotona.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CN_de_no_monotona.lean][Lean 4 Web]]
+
+** f: ℝ → ℝ  no es monótona syss (∃x,y)(x ≤ y ∧ f(x) > f(y))
+#+INCLUDE: "../src/CNS_de_no_monotona.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/CNS_de_no_monotona.lean][Lean 4 Web]]
+
+** La función x ↦ -x no es monótona creciente
+#+INCLUDE: "../src/La_opuesta_es_no_monotona.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_opuesta_es_no_monotona.lean][Lean 4 Web]]
+
+** La suma de dos funciones pares es par
+#+INCLUDE: "../src/Suma_funciones_pares.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_funciones_pares.lean][Lean 4 Web]]
+
+** El producto de dos funciones impares es par
+#+INCLUDE: "../src/Producto_de_funciones_impares.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_de_funciones_impares.lean][Lean 4 Web]]
+
+** El producto de una función par por una impar es impar
+#+INCLUDE: "../src/Producto_funcion_par_e_impar.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_funcion_par_e_impar.lean][Lean 4 Web]]
+
+** Si f es par y g es impar, entonces (f ∘ g) es par
+#+INCLUDE: "../src/Composicion_de_par_e_impar.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Composicion_de_par_e_impar.lean][Lean 4 Web]]
+
+** Para cualquier conjunto s, s ⊆ s
+#+INCLUDE: "../src/Propiedad_reflexiva_del_subconjunto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_reflexiva_del_subconjunto.lean][Lean 4 Web]]
+
+** Las funciones f(x,y) = (x + y)² y g(x,y) = x² + 2xy + y² son iguales
+#+INCLUDE: "../src/Demostracion_por_extensionalidad.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Demostracion_por_extensionalidad.lean][Lean 4 Web]]
+
+** La composición de una función creciente y una decreciente es decreciente
+#+INCLUDE: "../src/La_composicion_de_una_funcion_creciente_y_una_decreciente_es_decreciente.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_composicion_de_una_funcion_creciente_y_una_decreciente_es_decreciente.lean][Lean 4 Web]].
+
+** Si una función es creciente e involutiva, entonces es la identidad
+#+INCLUDE: "../src/Una_funcion_creciente_e_involutiva_es_la_identidad.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Una_funcion_creciente_e_involutiva_es_la_identidad.lean][Lean 4 Web]].
+
+** Si `f(x) ≤ f(y) → x ≤ y`, entonces f es inyectiva
+#+INCLUDE: "../src/Si_f(x)_leq_f(y)_to_x_leq_y,_entonces_f_es_inyectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Si_f(x)_leq_f(y)_to_x_leq_y,_entonces_f_es_inyectiva.lean][Lean 4 Web]].
+
+** Las funciones con inversa por la izquierda son inyectivas
+#+INCLUDE: "../src/Las_funciones_con_inversa_por_la_izquierda_son_inyectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Las_funciones_con_inversa_por_la_izquierda_son_inyectivas.lean][Lean 4 Web]].
+
+** Si g ∘ f es inyectiva, entonces f es inyectiva
+#+INCLUDE: "../src/Inyectiva_si_lo_es_la_composicion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Inyectiva_si_lo_es_la_composicion.lean][Lean 4 Web]].
+
+* Teoría de conjuntos
+
+** Si r ⊆ s y s ⊆ t, entonces r ⊆ t
+#+INCLUDE: "../src/Propiedad_transitiva_del_subconjunto.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_transitiva_del_subconjunto.lean][Lean 4 Web]]
+
+** Si a es una cota superior de s y a ≤ b, entonces b es una cota superior de s
+#+INCLUDE: "../src/Cotas_superiores_de_conjuntos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Cotas_superiores_de_conjuntos.lean][Lean 4 Web]]
+
+** Si s ⊆ t, entonces s ∩ u ⊆ t ∩ u
+#+INCLUDE: "../src/Propiedad_de_monotonia_de_la_interseccion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_de_monotonia_de_la_interseccion.lean][Lean 4 Web]]
+
+** s ∩ (t ∪ u) ⊆ (s ∩ t) ∪ (s ∩ u)
+#+INCLUDE: "../src/Propiedad_semidistributiva_de_la_interseccion_sobre_la_union.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_semidistributiva_de_la_interseccion_sobre_la_union.lean][Lean 4 Web]]
+
+** (s \ t) \ u ⊆ s \ (t ∪ u)
+#+INCLUDE: "../src/Diferencia_de_diferencia_de_conjuntos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Diferencia_de_diferencia_de_conjuntos.lean][Lean 4 Web]]
+
+** (s ∩ t) ∪ (s ∩ u) ⊆ s ∩ (t ∪ u)
+#+INCLUDE: "../src/Propiedad_semidistributiva_de_la_interseccion_sobre_la_union_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_semidistributiva_de_la_interseccion_sobre_la_union_2.lean][Lean 4 Web]]
+
+** s \ (t ∪ u) ⊆ (s \ t) \ u
+#+INCLUDE: "../src/Diferencia_de_diferencia_de_conjuntos_2.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Diferencia_de_diferencia_de_conjuntos_2.lean][Lean 4 Web]]
+
+** s ∩ t = t ∩ s
+#+INCLUDE: "../src/Conmutatividad_de_la_interseccion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Conmutatividad_de_la_interseccion.lean][Lean 4 Web]]
+
+** s ∩ (s ∪ t) = s
+#+INCLUDE: "../src/Interseccion_con_su_union.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Interseccion_con_su_union.lean][Lean 4 Web]]
+
+** s ∪ (s ∩ t) = s
+#+INCLUDE: "../src/Union_con_su_interseccion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Union_con_su_interseccion.lean][Lean 4 Web]]
+
+** (s \ t) ∪ t = s ∪ t
+#+INCLUDE: "../src/Union_con_su_diferencia.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Union_con_su_diferencia.lean][Lean 4 Web]]
+
+** (s \ t) ∪ (t \ s) = (s ∪ t) \ (s ∩ t)
+#+INCLUDE: "../src/Diferencia_de_union_e_interseccion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Diferencia_de_union_e_interseccion.lean][Lean 4 Web]]
+
+** Pares ∪ Impares = Naturales
+#+INCLUDE: "../src/Union_de_pares_e_impares.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Union_de_pares_e_impares.lean][Lean 4 Web]]
+
+** Los primos mayores que 2 son impares
+#+INCLUDE: "../src/Interseccion_de_los_primos_y_los_mayores_que_dos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Interseccion_de_los_primos_y_los_mayores_que_dos.lean][Lean 4 Web]]
+
+** s ∩ (⋃ i, A i) = ⋃ i, (A i ∩ s)
+#+INCLUDE: "../src/Distributiva_de_la_interseccion_respecto_de_la_union_general.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Distributiva_de_la_interseccion_respecto_de_la_union_general.lean][Lean 4 Web]]
+
+** (⋂ i, A i ∩ B i) = (⋂ i, A i) ∩ (⋂ i, B i)
+#+INCLUDE: "../src/Interseccion_de_intersecciones.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Interseccion_de_intersecciones.lean][Lean 4 Web]]
+
+** s ∪ (⋂ i, A i) = ⋂ i, (A i ∪ s)
+#+INCLUDE: "../src/Union_con_interseccion_general.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Union_con_interseccion_general.lean][Lean 4 Web]].
+
+** f⁻¹[u ∩ v] = f⁻¹[u] ∩ f⁻¹[v]
+#+INCLUDE: "../src/Imagen_inversa_de_la_interseccion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_inversa_de_la_interseccion.lean][Lean 4 Web]].
+
+** f[s ∪ t] = f[s] ∪ f[t]
+#+INCLUDE: "../src/Imagen_de_la_union.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_union.lean][Lean 4 Web]].
+
+** s ⊆ f⁻¹[f[s]​]
+#+INCLUDE: "../src/Imagen_inversa_de_la_imagen.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_inversa_de_la_imagen.lean][Lean 4 Web]].
+
+** f[s] ⊆ u ↔ s ⊆ f⁻¹[u]
+#+INCLUDE: "../src/Subconjunto_de_la_imagen_inversa.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Subconjunto_de_la_imagen_inversa.lean][Lean 4 Web]].
+
+** La función (x ↦ x + c) es inyectiva
+#+INCLUDE: "../src/Suma_constante_es_inyectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_constante_es_inyectiva.lean][Lean 4 Web]]
+
+** Si c ≠ 0, entonces la función (x ↦ cx) es inyectiva
+#+INCLUDE: "../src/Producto_constante_no_nula_es_inyectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_constante_no_nula_es_inyectiva.lean][Lean 4 Web]]
+
+** La composición de funciones inyectivas es inyectiva
+#+INCLUDE: "../src/Composicion_de_funciones_inyectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Composicion_de_funciones_inyectivas.lean][Lean 4 Web]]
+
+** La función (x ↦ x + c) es suprayectiva
+#+INCLUDE: "../src/Suma_constante_es_suprayectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suma_constante_es_suprayectiva.lean][Lean 4 Web]]
+
+** Si c ≠ 0, entonces la función (x ↦ cx) es suprayectiva
+#+INCLUDE: "../src/Producto_por_no_nula_es_suprayectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_por_no_nula_es_suprayectiva.lean][Lean 4 Web]]
+
+** Si c ≠ 0, entonces la función (x ↦ cx + d) es suprayectiva
+#+INCLUDE: "../src/Producto_por_no_nula_y_suma_es_suprayectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_por_no_nula_y_suma_es_suprayectiva.lean][Lean 4 Web]]
+
+** Si f: ℝ → ℝ es suprayectiva, entonces ∃x ∈ ℝ tal que f(x)² = 9
+#+INCLUDE: "../src/Propiedad_de_suprayectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Propiedad_de_suprayectivas.lean][Lean 4 Web]]
+
+** La composición de funciones suprayectivas es suprayectiva
+#+INCLUDE: "../src/Composicion_de_suprayectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Composicion_de_suprayectivas.lean][Lean 4 Web]]
+
+** Si f es inyectiva, entonces f⁻¹[f[s]​] ⊆ s
+#+INCLUDE: "../src/Imagen_inversa_de_la_imagen_de_aplicaciones_inyectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_inversa_de_la_imagen_de_aplicaciones_inyectivas.lean][Lean 4 Web]].
+
+** f[f⁻¹[u]​] ⊆ u
+#+INCLUDE: "../src/Imagen_de_la_imagen_inversa.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_imagen_inversa.lean][Lean 4 Web]].
+
+** Si f es suprayectiva, entonces u ⊆ f[f⁻¹[u]​]
+#+INCLUDE: "../src/Imagen_de_imagen_inversa_de_aplicaciones_suprayectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_imagen_inversa_de_aplicaciones_suprayectivas.lean][Lean 4 Web]].
+
+** Si s ⊆ t, entonces f[s] ⊆ f[t]
+#+INCLUDE: "../src/Monotonia_de_la_imagen_de_conjuntos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Monotonia_de_la_imagen_de_conjuntos.lean][Lean 4 Web]].
+
+** Si u ⊆ v, entonces f⁻¹[u] ⊆ f⁻¹[v]
+#+INCLUDE: "../src/Monotonia_de_la_imagen_inversa.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Monotonia_de_la_imagen_inversa.lean][Lean 4 Web]].
+
+** f⁻¹[A ∪ B] = f⁻¹[A] ∪ f⁻¹[B]
+#+INCLUDE: "../src/Imagen_inversa_de_la_union.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_inversa_de_la_union.lean][Lean 4 Web]].
+
+** f[s ∩ t] ⊆ f[s] ∩ f[t]
+#+INCLUDE: "../src/Imagen_de_la_interseccion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_interseccion.lean][Lean 4 Web]].
+
+** Si f es inyectiva, entonces f[s] ∩ f[t] ⊆ f[s ∩ t]
+#+INCLUDE: "../src/Imagen_de_la_interseccion_de_aplicaciones_inyectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_interseccion_de_aplicaciones_inyectivas.lean][Lean 4 Web]].
+
+** f[s] \ f[t] ⊆ f[s \ t]
+#+INCLUDE: "../src/Imagen_de_la_diferencia_de_conjuntos.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_diferencia_de_conjuntos.lean][Lean 4 Web]].
+
+** f[s] ∩ v = f[s ∩ f⁻¹[v]​]
+#+INCLUDE: "../src/Interseccion_con_la_imagen.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Interseccion_con_la_imagen.lean][Lean 4 Web]].
+
+** Unión con la imagen
+#+INCLUDE: "../src/Union_con_la_imagen.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Union_con_la_imagen.lean][Lean 4 Web]].
+
+** Intersección con la imagen inversa
+#+INCLUDE: "../src/Interseccion_con_la_imagen_inversa.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Interseccion_con_la_imagen_inversa.lean][Lean 4 Web]].
+
+** Unión con la imagen inversa
+#+INCLUDE: "../src/Union_con_la_imagen_inversa.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Union_con_la_imagen_inversa.lean][Lean 4 Web]].
+
+** Imagen de la unión general
+#+INCLUDE: "../src/Imagen_de_la_union_general.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_union_general.lean][Lean 4 Web]].
+
+** Imagen de la intersección general
+#+INCLUDE: "../src/Imagen_de_la_interseccion_general.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_interseccion_general.lean][Lean 4 Web]].
+
+** Imagen de la intersección general mediante aplicaciones inyectivas
+#+INCLUDE: "../src/Imagen_de_la_interseccion_general_mediante_inyectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_de_la_interseccion_general_mediante_inyectiva.lean][Lean 4 Web]].
+
+** Imagen inversa de la unión general
+#+INCLUDE: "../src/Imagen_inversa_de_la_union_general.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_inversa_de_la_union_general.lean][Lean 4 Web]].
+
+** Imagen inversa de la intersección general
+#+INCLUDE: "../src/Imagen_inversa_de_la_interseccion_general.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Imagen_inversa_de_la_interseccion_general.lean][Lean 4 Web]].
+
+** Teorema de Cantor
+#+INCLUDE: "../src/Teorema_de_Cantor.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Teorema_de_Cantor.lean][Lean 4 Web]].
+
+** Si g ∘ f es suprayectiva, entonces g es suprayectiva
+#+INCLUDE: "../src/Suprayectiva_si_lo_es_la_composicion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Suprayectiva_si_lo_es_la_composicion.lean][Lean 4 Web]].
+
+** Las funciones inyectivas tienen inversa por la izquierda
+#+INCLUDE: "../src/Las_funciones_inyectivas_tienen_inversa_por_la_izquierda.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Las_funciones_inyectivas_tienen_inversa_por_la_izquierda.lean][Lean 4 Web]].
+
+** Las funciones con inversa por la derecha son suprayectivas
+#+INCLUDE: "../src/Las_funciones_con_inversa_por_la_derecha_son_suprayectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Las_funciones_con_inversa_por_la_derecha_son_suprayectivas.lean][Lean 4 Web]].
+
+** Las funciones suprayectivas tienen inversa por la derecha
+#+INCLUDE: "../src/Las_funciones_suprayectivas_tienen_inversa_por_la_derecha.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Las_funciones_suprayectivas_tienen_inversa_por_la_derecha.lean][Lean 4 Web]].
+
+** Las funciones con inversa son biyectivas
+#+INCLUDE: "../src/Las_funciones_con_inversa_son_biyectivas.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Las_funciones_con_inversa_son_biyectivas.lean][Lean 4 Web]].
+
+** Las funciones biyectivas tienen inversa
+#+INCLUDE: "../src/Las_funciones_biyectivas_tienen_inversa.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Las_funciones_biyectivas_tienen_inversa.lean][Lean 4 Web]].
+
+** La equipotencia es una relación reflexiva
+#+INCLUDE: "../src/La_equipotencia_es_una_relacion_reflexiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_equipotencia_es_una_relacion_reflexiva.lean][Lean 4 Web]].
+
+** La inversa de una función es biyectiva
+#+INCLUDE: "../src/La_inversa_de_una_funcion_biyectiva_es_biyectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_inversa_de_una_funcion_biyectiva_es_biyectiva.lean][Lean 4 Web]].
+
+** La equipotencia es una relación simétrica
+#+INCLUDE: "../src/La_equipotencia_es_una_relacion_simetrica.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_equipotencia_es_una_relacion_simetrica.lean][Lean 4 Web]].
+
+** La composición de funciones biyectivas es biyectiva
+#+INCLUDE: "../src/La_composicion_de_funciones_biyectivas_es_biyectiva.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_composicion_de_funciones_biyectivas_es_biyectiva.lean][Lean 4 Web]].
+
+* Lógica
+
+** Si ¬(∃x)P(x), entonces (∀x)¬P(x)
+#+INCLUDE: "../src/Para_todo_no_de_no_existe.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Para_todo_no_de_no_existe.lean][Lean 4 Web]]
+
+** Si (∀x)¬P(x), entonces ¬(∃x)P(x)
+#+INCLUDE: "../src/No_existe_de_para_todo_no.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/No_existe_de_para_todo_no.lean][Lean 4 Web]]
+
+** Si ¬(∀x)P(x), entonces (∃x)¬P(x)
+#+INCLUDE: "../src/Existe_no_de_no_para_todo.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Existe_no_de_no_para_todo.lean][Lean 4 Web]]
+
+** Si (∃x)¬P(x), entonces ¬(∀x)P(x)
+#+INCLUDE: "../src/No_para_todo_de_existe_no.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/No_para_todo_de_existe_no.lean][Lean 4 Web]]
+
+** ¬¬P → P
+#+INCLUDE: "../src/Eliminacion_doble_negacion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/][Lean 4 Web]]
+
+** P → ¬¬P
+#+INCLUDE: "../src/Introduccion_doble_negacion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Introduccion_doble_negacion.lean][Lean 4 Web]]
+
+** (P → Q) ↔ ¬P ∨ Q
+#+INCLUDE: "../src/Implicacion_mediante_disyuncion_y_negacion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Implicacion_mediante_disyuncion_y_negacion.lean][Lean 4 Web]]
+
+** La paradoja del barbero
+#+INCLUDE: "../src/La_paradoja_del_barbero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/La_paradoja_del_barbero.lean][Lean 4 Web]].
+
+* Límites de sucesiones
+
+** La sucesión constante sₙ = c converge a c
+#+INCLUDE: "../src/Convergencia_de_la_sucesion_constante.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Convergencia_de_la_sucesion_constante.lean][Lean 4 Web]].
+
+** Si la sucesión s converge a b y la t a c, entonces s+t converge a b+c
+#+INCLUDE: "../src/Convergencia_de_la_suma.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Convergencia_de_la_suma.lean][Lean 4 Web]]
+
+** Unicidad del límite de las sucesiones convergentes
+#+INCLUDE: "../src/Unicidad_del_limite_de_las_sucesiones_convergentes.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Unicidad_del_limite_de_las_sucesiones_convergentes.lean][Lean 4 Web]]
+
+** Si el límite de la sucesión uₙ es a y c ∈ ℝ, entonces el límite de uₙ+c es a+c
+#+INCLUDE: "../src/Limite_cuando_se_suma_una_constante.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Limite_cuando_se_suma_una_constante.lean][Lean 4 Web]]
+
+** Si el límite de la sucesión uₙ es a y c ∈ ℝ, entonces el límite de cuₙ es ca
+#+INCLUDE: "../src/Limite_multiplicado_por_una_constante.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Limite_multiplicado_por_una_constante.lean][Lean 4 Web]]
+
+** El límite de u es a syss el de u-a es 0
+#+INCLUDE: "../src/El_limite_de_u_es_a_syss_el_de_u-a_es_0.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/El_limite_de_u_es_a_syss_el_de_u-a_es_0.lean][Lean 4 Web]]
+
+** Si uₙ y vₙ convergen a 0, entonces uₙvₙ converge a 0
+#+INCLUDE: "../src/Producto_de_sucesiones_convergentes_a_cero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_de_sucesiones_convergentes_a_cero.lean][Lean 4 Web]]
+
+** Teorema del emparedado
+#+INCLUDE: "../src/Teorema_del_emparedado.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Teorema_del_emparedado.lean][Lean 4 Web]]
+
+** Los supremos de las sucesiones crecientes son sus límites
+#+INCLUDE: "../src/Los_supremos_de_las_sucesiones_crecientes_son_sus_limites.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Los_supremos_de_las_sucesiones_crecientes_son_sus_limites.lean][Lean 4 Web]].
+
+** Las sucesiones convergentes están acotadas
+#+INCLUDE: "../src/Acotacion_de_convergentes.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Acotacion_de_convergentes.lean][Lean 4 Web]].
+
+** Si (∀n)[uₙ ≤ vₙ], entonces lim uₙ ≤ lim vₙ
+#+INCLUDE: "../src/Limite_de_sucesion_menor_que_otra_sucesion.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Limite_de_sucesion_menor_que_otra_sucesion.lean][Lean 4 Web]].
+
+** Si uₙ está acotada y lim vₙ = 0, entonces lim (uₙ·vₙ) = 0
+#+INCLUDE: "../src/Producto_de_una_sucesion_acotada_por_otra_convergente_a_cero.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Producto_de_una_sucesion_acotada_por_otra_convergente_a_cero.lean][Lean 4 Web]].
+
+** Si el límite de la sucesión uₙ es a, entonces el límite de -uₙ es -a
+#+INCLUDE: "../src/Limite_de_la_opuesta.lean" src lean :lines "7-"
+Se puede interactuar con las pruebas anteriores en [[https://lean.math.hhu.de/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2/main/src/Limite_de_la_opuesta.lean][Lean 4 Web]].
+
+#+LATEX: \input Calculemus2_bibliografia
+
+#+LATEX: \chapter*{Lemas usados}
+#+LATEX: \addcontentsline{toc}{chapter}{Lemas usados}
+#+INCLUDE: "../src/Lemas_usados.lean" src lean :lines "7-"
+
+#+LATEX: \end{document}
