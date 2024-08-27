@@ -1,89 +1,145 @@
--- Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.lean
--- Pruebas de aplana (espejo a) = reverse (aplana a).
--- José A. Alonso Jiménez <https://jaalonso.github.io>
--- Sevilla, 27-agosto-2024
--- ---------------------------------------------------------------------
+---
+title: Pruebas de "aplana (espejo a) = reverse (aplana a)"
+date: 2024-08-27 06:00:00 UTC+02:00
+category: Árboles binarios
+has_math: true
+---
 
--- ---------------------------------------------------------------------
--- El árbol correspondiente a
---        3
---       / \
---      2   4
---     / \
---    1   5
--- se puede representar por el término
---    Nodo 3 (Nodo 2 (Hoja 1) (Hoja 5)) (Hoja 4)
--- usando el tipo de dato arbol definido por
---    inductive Arbol (α : Type) : Type
---      | Hoja : α → Arbol α
---      | Nodo : α → Arbol α → Arbol α → Arbol α
---
--- La imagen especular del árbol anterior es
---      3
---     / \
---    4   2
---       / \
---      5   1
--- y la lista obtenida aplanándolo (recorriéndolo en orden infijo) es
---    [4, 3, 5, 2, 1]
---
--- La definición de la función que calcula la imagen especular es
---    def espejo : Arbol α → Arbol α
---      | Hoja x     => Hoja x
---      | Nodo x i d => Nodo x (espejo d) (espejo i)
--- y la que aplana el árbol es
---    def aplana : Arbol α → List α
---      | Hoja x     => [x]
---      | Nodo x i d => (aplana i) ++ [x] ++ (aplana d)
---
--- Demostrar que
---    aplana (espejo a) = reverse (aplana a)
--- ---------------------------------------------------------------------
+[mathjax]
 
--- Demostración en lenguaje natural
--- ================================
+El árbol correspondiente a
 
--- De las definiciones de las funciones espejo y aplana se obtienen los
--- siguientes
---    espejo1 : espejo (Hoja x) = Hoja x
---    espejo2 : espejo (Nodo x i d) = Nodo x (espejo d) (espejo i)
---    aplana1 : aplana (Hoja x) = [x]
---    aplana2 : aplana (Nodo x i d) = (aplana i) ++ [x] ++ (aplana d)
---
--- Demostraremos que, para todo árbol a,
---    aplana (espejo a) = reverse (aplana a)
--- por inducción sobre a.
---
--- Caso base: Supongamos que a = Hoja x. Entonces,
---    aplana (espejo a)
---    = aplana (espejo (Hoja x))
---    = aplana (Hoja x)              [por espejo1]
---    = [x]                          [por aplana1]
---    = reverse [x]
---    = reverse (aplana (Hoja x))    [por aplana1]
---    = reverse (aplana a)
---
--- Paso de inducción: Supongamos que a = Nodo x i d y se cumplen las
--- hipótesis de inducción
---    aplana (espejo i) = reverse (aplana i)                        (Hi)
---    aplana (espejo d) = reverse (aplana d)                        (Hd)
--- Entonces,
---    aplana (espejo a)
---    = aplana (espejo (Nodo x i d))
---    = aplana (Nodo x (espejo d) (espejo i))                     [por espejo2]
---    = (aplana (espejo d) ++ [x]) ++ aplana (espejo i)           [por aplana2]
---    = (reverse (aplana d) ++ [x]) ++ aplana (espejo i)          [por Hd]
---    = (reverse (aplana d) ++ [x]) ++ reverse (aplana i)         [por Hi]
---    = (reverse (aplana d) ++ reverse [x]) ++ reverse (aplana i)
---    = reverse ([x] ++ aplana d) ++ reverse (aplana i)
---    = reverse (aplana i ++ ([x] ++ aplana d))
---    = reverse ((aplana i ++ [x]) ++ aplana d)
---    = reverse (aplana (Nodo x i d))                             [por aplana2]
---    = reverse (aplana a)
+        3
+       / \
+      2   4
+     / \
+    1   5
 
--- Demostraciones con Lean4
--- ========================
+se puede representar por el término
 
+    Nodo 3 (Nodo 2 (Hoja 1) (Hoja 5)) (Hoja 4)
+
+usando el tipo de dato arbol definido por
+<pre lang="lean">
+   inductive Arbol (α : Type) : Type
+     | Hoja : α → Arbol α
+     | Nodo : α → Arbol α → Arbol α → Arbol α
+</pre>
+
+La imagen especular del árbol anterior es
+
+      3
+     / \
+    4   2
+       / \
+      5   1
+y la lista obtenida aplanándolo (recorriéndolo en orden infijo) es
+
+    [4, 3, 5, 2, 1]
+
+La definición de la función que calcula la imagen especular es
+<pre lang="lean">
+   def espejo : Arbol α → Arbol α
+     | Hoja x     => Hoja x
+     | Nodo x i d => Nodo x (espejo d) (espejo i)
+</pre>
+y la que aplana el árbol es
+<pre lang="lean">
+   def aplana : Arbol α → List α
+     | Hoja x     => [x]
+     | Nodo x i d => (aplana i) ++ [x] ++ (aplana d)
+</pre>
+
+Demostrar que
+<pre lang="lean">
+   aplana (espejo a) = reverse (aplana a)
+</pre>
+
+Para ello, completar la siguiente teoría de Lean4:
+
+<pre lang="lean">
+import Mathlib.Tactic
+
+open List
+
+variable {α : Type}
+
+-- Para que no use la notación con puntos
+set_option pp.fieldNotation false
+
+inductive Arbol (α : Type) : Type
+  | Hoja : α → Arbol α
+  | Nodo : α → Arbol α → Arbol α → Arbol α
+
+namespace Arbol
+
+variable (a i d : Arbol α)
+variable (x : α)
+
+def espejo : Arbol α → Arbol α
+  | Hoja x     => Hoja x
+  | Nodo x i d => Nodo x (espejo d) (espejo i)
+
+def aplana : Arbol α → List α
+  | Hoja x     => [x]
+  | Nodo x i d => (aplana i) ++ [x] ++ (aplana d)
+
+example :
+  aplana (espejo a) = reverse (aplana a) :=
+by sorry
+</pre>
+<!--more-->
+
+<h2>1. Demostración en lenguaje natural</h2>
+
+De las definiciones de las funciones espejo y aplana se obtienen los
+siguientes
+<pre lang="lean">
+   espejo1 : espejo (Hoja x) = Hoja x
+   espejo2 : espejo (Nodo x i d) = Nodo x (espejo d) (espejo i)
+   aplana1 : aplana (Hoja x) = [x]
+   aplana2 : aplana (Nodo x i d) = (aplana i) ++ [x] ++ (aplana d)
+</pre>
+
+Demostraremos que, para todo árbol a,
+<pre lang="lean">
+   aplana (espejo a) = reverse (aplana a)
+</pre>
+por inducción sobre a.
+
+Caso base: Supongamos que a = Hoja x. Entonces,
+
+    aplana (espejo a)
+    = aplana (espejo (Hoja x))
+    = aplana (Hoja x)              [por espejo1]
+    = [x]                          [por aplana1]
+    = reverse [x]
+    = reverse (aplana (Hoja x))    [por aplana1]
+    = reverse (aplana a)
+
+Paso de inducción: Supongamos que a = Nodo x i d y se cumplen las hipótesis de inducción
+<pre lang="lean">
+   aplana (espejo i) = reverse (aplana i)                        (Hi)
+   aplana (espejo d) = reverse (aplana d)                        (Hd)
+</pre>
+Entonces,
+
+    aplana (espejo a)
+    = aplana (espejo (Nodo x i d))
+    = aplana (Nodo x (espejo d) (espejo i))                     [por espejo2]
+    = (aplana (espejo d) ++ [x]) ++ aplana (espejo i)           [por aplana2]
+    = (reverse (aplana d) ++ [x]) ++ aplana (espejo i)          [por Hd]
+    = (reverse (aplana d) ++ [x]) ++ reverse (aplana i)         [por Hi]
+    = (reverse (aplana d) ++ reverse [x]) ++ reverse (aplana i)
+    = reverse ([x] ++ aplana d) ++ reverse (aplana i)
+    = reverse (aplana i ++ ([x] ++ aplana d))
+    = reverse ((aplana i ++ [x]) ++ aplana d)
+    = reverse (aplana (Nodo x i d))                             [por aplana2]
+    = reverse (aplana a)
+
+<h2>2. Demostraciones con Lean4</h2>
+
+<pre lang="lean">
 import Mathlib.Tactic
 
 open List
@@ -329,3 +385,127 @@ end Arbol
 -- #check (append_assoc xs ys zs : (xs ++ ys) ++ zs = xs ++ (ys ++ zs))
 -- #check (reverse_append xs ys : reverse (xs ++ ys) = reverse ys ++ reverse xs)
 -- #check (reverse_singleton x : reverse [x] = [x])
+</pre>
+
+Se puede interactuar con las demostraciones anteriores en [Lean 4 Web](https://live.lean-lang.org/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2_es/main/src/Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.lean).
+
+<h2>3. Demostraciones con Isabelle/HOL</h2>
+
+<pre lang="isar">
+theory Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular
+imports Main
+begin
+
+datatype 'a arbol = hoja "'a"
+                  | nodo "'a" "'a arbol" "'a arbol"
+
+fun espejo :: "'a arbol ⇒ 'a arbol" where
+  "espejo (hoja x)     = (hoja x)"
+| "espejo (nodo x i d) = (nodo x (espejo d) (espejo i))"
+
+fun aplana :: "'a arbol ⇒ 'a list" where
+  "aplana (hoja x)     = [x]"
+| "aplana (nodo x i d) = (aplana i) @ [x] @ (aplana d)"
+
+(* Lema auxiliar *)
+(* ============= *)
+
+(* 1ª demostración del lema auxiliar *)
+lemma "rev [x] = [x]"
+proof -
+  have "rev [x] = rev [] @ [x]"
+    by (simp only: rev.simps(2))
+  also have "… = [] @ [x]"
+    by (simp only: rev.simps(1))
+  also have "… = [x]"
+    by (simp only: append.simps(1))
+  finally show ?thesis
+    by this
+qed
+
+(* 2ª demostración del lema auxiliar *)
+lemma rev_unit: "rev [x] = [x]"
+by simp
+
+(* Lema principal *)
+(* ============== *)
+
+(* 1ª demostración *)
+lemma
+  fixes a :: "'b arbol"
+  shows "aplana (espejo a) = rev (aplana a)" (is "?P a")
+proof (induct a)
+  fix x :: 'b
+  have "aplana (espejo (hoja x)) = aplana (hoja x)"
+    by (simp only: espejo.simps(1))
+  also have "… = [x]"
+    by (simp only: aplana.simps(1))
+  also have "… = rev [x]"
+    by (rule rev_unit [symmetric])
+  also have "… = rev (aplana (hoja x))"
+    by (simp only: aplana.simps(1))
+  finally show "?P (hoja x)"
+    by this
+next
+  fix x :: 'b
+  fix i assume h1: "?P i"
+  fix d assume h2: "?P d"
+  show "?P (nodo x i d)"
+  proof -
+    have "aplana (espejo (nodo x i d)) =
+          aplana (nodo x (espejo d) (espejo i))"
+      by (simp only: espejo.simps(2))
+    also have "… = (aplana (espejo d)) @ [x] @ (aplana (espejo i))"
+      by (simp only: aplana.simps(2))
+    also have "… = (rev (aplana d)) @ [x] @ (rev (aplana i))"
+      by (simp only: h1 h2)
+    also have "… = rev ((aplana i) @ [x] @ (aplana d))"
+      by (simp only: rev_append rev_unit append_assoc)
+    also have "… = rev (aplana (nodo x i d))"
+      by (simp only: aplana.simps(2))
+    finally show ?thesis
+      by this
+ qed
+qed
+
+(* 2ª demostración *)
+lemma
+  fixes a :: "'b arbol"
+  shows "aplana (espejo a) = rev (aplana a)" (is "?P a")
+proof (induct a)
+  fix x
+  show "?P (hoja x)" by simp
+next
+  fix x
+  fix i assume h1: "?P i"
+  fix d assume h2: "?P d"
+  show "?P (nodo x i d)"
+  proof -
+    have "aplana (espejo (nodo x i d)) =
+          aplana (nodo x (espejo d) (espejo i))" by simp
+    also have "… = (aplana (espejo d)) @ [x] @ (aplana (espejo i))"
+      by simp
+    also have "… = (rev (aplana d)) @ [x] @ (rev (aplana i))"
+      using h1 h2 by simp
+    also have "… = rev ((aplana i) @ [x] @ (aplana d))" by simp
+    also have "… = rev (aplana (nodo x i d))" by simp
+    finally show ?thesis .
+ qed
+qed
+
+(* 3ª demostración *)
+lemma "aplana (espejo a) = rev (aplana a)"
+proof (induct a)
+case (hoja x)
+then show ?case by simp
+next
+  case (nodo x i d)
+  then show ?case by simp
+qed
+
+(* 4ª demostración *)
+lemma "aplana (espejo a) = rev (aplana a)"
+  by (induct a) simp_all
+
+end
+</pre>
