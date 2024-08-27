@@ -13,10 +13,10 @@
 --    1   5
 -- se puede representar por el término
 --    nodo 3 (nodo 2 (hoja 1) (hoja 5)) (hoja 4)
--- usado el tipo de dato arbol definido por
---    inductive arbol (α : Type) : Type
---    | hoja : α → arbol
---    | nodo : α → arbol → arbol → arbol
+-- usando el tipo de dato arbol definido por
+--    inductive Arbol (α : Type) : Type
+--      | hoja : α → Arbol α
+--      | nodo : α → Arbol α → Arbol α → Arbol α
 --
 -- La imagen especular del árbol anterior es
 --      3
