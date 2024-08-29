@@ -44,7 +44,7 @@
 -- ================================
 
 -- De las definiciones de las funciones espejo y aplana se obtienen los
--- siguientes
+-- siguientes lemas
 --    espejo1 : espejo (Hoja x) = Hoja x
 --    espejo2 : espejo (Nodo x i d) = Nodo x (espejo d) (espejo i)
 --    aplana1 : aplana (Hoja x) = [x]
