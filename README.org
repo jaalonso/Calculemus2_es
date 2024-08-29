@@ -7,6 +7,7 @@ ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calcul
 Se han verificado las soluciones con la [[https://github.com/leanprover/lean4/releases/tag/v4.11.0-rc2][version 4.11.0-rc2]] de Lean.
 
 * Ejercicios más recientes
++ [[./textos/Fibonacci.md][Pruebas de equivalencia de definiciones de la función de Fibonacci]] (In [[./src/Fibonacci.lean][Lean4]] and [[./thy/Fibonacci.thy][Isabelle]]).
 + [[./textos/Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.md][Pruebas de aplana (espejo a) = reverse (aplana a)]] (En [[./src/Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.lean][Lean]] y en [[./thy/Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.thy][Isabelle]]).
 + [[./textos/Pruebas_de_que_la_funcion_espejo_de_los_arboles_binarios_es_involutiva.md][Pruebas de que la función espejo de los árboles binarios es involutiva]] (En [[./src/Pruebas_de_que_la_funcion_espejo_de_los_arboles_binarios_es_involutiva.lean][Lean]] y en [[./thy/Pruebas_de_que_la_funcion_espejo_de_los_arboles_binarios_es_involutiva.thy][Isabelle]]).
 + [[./textos/Pruebas_de_equivalencia_de_definiciones_de_inversa.md][Pruebas de equivalencia de definiciones de inversa]] (En [[./src/Pruebas_de_equivalencia_de_definiciones_de_inversa.lean][Lean]] e [[./thy/Pruebas_de_equivalencia_de_definiciones_de_inversa.thy][Isabelle]]).
