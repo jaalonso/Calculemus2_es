@@ -4,9 +4,10 @@
 Este repositorio contienen las soluciones en Lean4 e Isabelle/HOL de los
 ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calculemus]].
 
-Se han verificado las soluciones con la [[https://github.com/leanprover/lean4/releases/tag/v4.11.0-rc2][version 4.11.0-rc2]] de Lean.
+Se han verificado las soluciones con la [[https://github.com/leanprover/lean4/releases/tag/v4.11.0-rc3][version 4.11.0-rc3]] de Lean.
 
 * Ejercicios más recientes
++ [[./textos/Si_x_es_el_supremo_de_A_entonces_forall_y_y_lt_x_to_exists_a_in_A_y_lt_a.md][Si x es el supremo de A, entonces ∀ y, y < x → ∃ a ∈ A, y < a]] (En [[./src/Si_x_es_el_supremo_de_A_entonces_forall_y_y_lt_x_to_exists_a_in_A_y_lt_a.lean][Lean]] y en [[./thy/Si_x_es_el_supremo_de_A_entonces_forall_y_y_lt_x_to_exists_a_in_A_y_lt_a.thy][Isabelle]]).
 + [[./textos/Fibonacci.md][Pruebas de equivalencia de definiciones de la función de Fibonacci]] (In [[./src/Fibonacci.lean][Lean4]] and [[./thy/Fibonacci.thy][Isabelle]]).
 + [[./textos/Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.md][Pruebas de aplana (espejo a) = reverse (aplana a)]] (En [[./src/Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.lean][Lean]] y en [[./thy/Razonamiento_sobre_arboles_binarios_Aplanamiento_e_imagen_especular.thy][Isabelle]]).
 + [[./textos/Pruebas_de_que_la_funcion_espejo_de_los_arboles_binarios_es_involutiva.md][Pruebas de que la función espejo de los árboles binarios es involutiva]] (En [[./src/Pruebas_de_que_la_funcion_espejo_de_los_arboles_binarios_es_involutiva.lean][Lean]] y en [[./thy/Pruebas_de_que_la_funcion_espejo_de_los_arboles_binarios_es_involutiva.thy][Isabelle]]).
