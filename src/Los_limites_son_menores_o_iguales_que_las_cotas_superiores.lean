@@ -20,7 +20,7 @@
 -- ================================
 
 -- Usando como lema la propiedad del ejercicio anterior que afirma que
--- para todo x, y ∈ R,
+-- para todo x, y ∈ ℝ,
 --    (∀ ε > 0, y ≤ x + ε) → y ≤ x
 -- la demostración de x ≤ y se reduce a demostrar que
 --    ∀ ε > 0, x ≤ y + ε
@@ -54,15 +54,6 @@ def limite (u : ℕ → ℝ) (a : ℝ) :=
 def cota_superior (u : ℕ → ℝ) (a : ℝ) :=
   ∀ n, u n ≤ a
 
--- Usaremos el lema del ejercicio anterior:
-lemma aux :
-  (∀ ε > 0, y ≤ x + ε) → y ≤ x :=
-by
-  contrapose!
-  intro h
-  use (y-x)/2
-  constructor <;> linarith
-
 -- 1º demostración
 -- ===============
 
@@ -71,7 +62,7 @@ example
   (hy : cota_superior u y)
   : x ≤ y :=
 by
-  apply aux
+  apply le_of_forall_pos_le_add
   -- ⊢ ∀ ε > 0, x ≤ y + ε
   intros ε hε
   -- ε : ℝ
@@ -96,7 +87,7 @@ example
   (hy : cota_superior u y)
   : x ≤ y :=
 by
-  apply aux
+  apply le_of_forall_pos_le_add
   -- ⊢ ∀ ε > 0, x ≤ y + ε
   intros ε hε
   -- ε : ℝ
@@ -120,7 +111,7 @@ example
   (hy : cota_superior u y)
   : x ≤ y :=
 by
-  apply aux
+  apply le_of_forall_pos_le_add
   -- ⊢ ∀ ε > 0, x ≤ y + ε
   intros ε hε
   -- ε : ℝ
