@@ -5,7 +5,8 @@ Este repositorio contienen las soluciones en Lean4 e Isabelle/HOL de los
 ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calculemus]].
 
 * Ejercicios más recientes
-+ [[./textos/Suma_de_los_primeros_n_numeros_naturales.md][Pruebas de "0 + 1 + 2 + 3 + ··· + n = n × (n + 1)/2"]] (En [[./src/Suma_de_los_primeros_n_numeros_naturales.lean][Lean]] y en [[./thy/Suma_de_los_primeros_n_numeros_naturales.thy][Isabelle]]).
++ [[./textos/Suma_de_progresion_aritmetica.md][Pruebas de a+(a+d)+(a+2d)+···+(a+nd)=(n+1)(2a+nd)/2]] (En [[./src/Suma_de_progresion_aritmetica.lean][Lean]] y en [[./thy/Suma_de_progresion_aritmetica.thy][Isabelle]]).
++ [[./textos/Suma_de_los_primeros_n_numeros_naturales.md][Pruebas de 0+1+2+3+···+n=n(n+1)/2]] (En [[./src/Suma_de_los_primeros_n_numeros_naturales.lean][Lean]] y en [[./thy/Suma_de_los_primeros_n_numeros_naturales.thy][Isabelle]]).
 + [[./textos/CS_de_continuidad.md][Si f es continua en a y el límite de u(n) es a, entonces el límite de f(u(n)) es f(a)]] (En [[./src/CS_de_continuidad.lean][Lean]] y en [[./thy/CS_de_continuidad.thy][Isabelle]]).
 + [[./textos/Los_limites_son_menores_o_iguales_que_las_cotas_superiores.md][Si x es límite de u e y es cota superior de u, entonces x ≤ y]] (En [[./src/Los_limites_son_menores_o_iguales_que_las_cotas_superiores.lean][Lean]] y en [[./thy/Los_limites_son_menores_o_iguales_que_las_cotas_superiores.thy][Isabelle]]).
 + [[./textos/CS_de_y_le_x.md][Si (∀ ε > 0, y ≤ x + ε), entonces y ≤ x]] (En [[./src/CS_de_y_le_x.lean][Lean]] y en [[./thy/CS_de_y_le_x.thy][Isabelle]]).

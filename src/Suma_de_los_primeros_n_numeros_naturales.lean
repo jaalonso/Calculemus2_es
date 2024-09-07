@@ -30,7 +30,7 @@
 --
 -- Paso de indución: Sea n = m+1 y supongamos la hipótesis de inducción
 -- (HI)
---    2s(m) = m
+--    2s(m) = m(m+1)
 -- Entonces,
 --    2s(n) = 2s(m+1)
 --          = 2(s(m) + (m+1))
@@ -43,16 +43,16 @@
 -- Demostraciones con Lean4
 -- ========================
 
-import Init.Data.Nat.Basic
+import Mathlib.Data.Nat.Defs
 import Mathlib.Tactic
 
 open Nat
 
-variable (n : Nat)
+variable (n : ℕ)
 
 set_option pp.fieldNotation false
 
-def suma : Nat → Nat
+def suma : ℕ → ℕ
   | 0      => 0
   | succ n => suma n + (n+1)
 
