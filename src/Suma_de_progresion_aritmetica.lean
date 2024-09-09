@@ -29,14 +29,14 @@
 --
 -- Paso de indución: Sea n = m+1 y supongamos la hipótesis de inducción
 -- (HI)
---    2s(m) = (m + 1)(2a + md)
+--    2s(a,d,m) = (m + 1)(2a + md)
 -- Entonces,
---    2s(n) = 2s(m+1)
---          = 2(s(a,d,m) + (a + (m + 1)d))
---          = 2s(a,d,m) + 2(a + (m + 1)d)
---          = ((m + 1)(2a + md)) + 2(a + (m + 1)d) [por HI]
---          = (m + 2)(2a + (m + 1)d)
---          = (n + 1)(2a + nd)
+--    2s(a,d,n) = 2s(a,d,m+1)
+--              = 2(s(a,d,m) + (a + (m + 1)d))
+--              = 2s(a,d,m) + 2(a + (m + 1)d)
+--              = ((m + 1)(2a + md)) + 2(a + (m + 1)d) [por HI]
+--              = (m + 2)(2a + (m + 1)d)
+--              = (n + 1)(2a + nd)
 
 -- Demostraciones con Lean4
 -- ========================
