@@ -42,7 +42,7 @@ ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calcul
 + [[./textos/La_equipotencia_es_una_relacion_de_equivalencia.md][La equipotencia es una relación de equivalencia]] (En [[./src/La_equipotencia_es_una_relacion_de_equivalencia.lean][Lean]] y en [[./thy/La_equipotencia_es_una_relacion_de_equivalencia.thy][Isabelle]]).
 + [[./textos/La_equipotencia_es_una_relacion_transitiva.md][La equipotencia es una relación transitiva]] (En [[./src/La_equipotencia_es_una_relacion_transitiva.lean][Lean]] y en [[./thy/La_equipotencia_es_una_relacion_transitiva.thy][Isabelle]]).
 
-* Old exercises
+* Ejercicios anteriores
 
 ** Demostraciones de una propiedad de los números enteros
 + [[./textos/El_producto_por_un_par_es_par.md][∀ m n ∈ ℕ, Even n → Even (m * n)]] (En [[./src/El_producto_por_un_par_es_par.lean][Lean4]]).

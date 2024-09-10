@@ -42,7 +42,7 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 -   [La equipotencia es una relación transitiva](./textos/La_equipotencia_es_una_relacion_transitiva.md) (En [Lean](./src/La_equipotencia_es_una_relacion_transitiva.lean) y en [Isabelle](./thy/La_equipotencia_es_una_relacion_transitiva.thy)).
 
 
-# Old exercises
+# Ejercicios anteriores
 
 
 ## Demostraciones de una propiedad de los números enteros
