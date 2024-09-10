@@ -4,6 +4,7 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 
 # Ejercicios más recientes
 
+-   [Pruebas de 0³+1³+2³+3³+···+n³ = (n(n+1)/2)²](./textos/Suma_de_los_primeros_cubos.md) (En [Lean](./src/Suma_de_los_primeros_cubos.lean) y en [Isabelle](./thy/Suma_de_los_primeros_cubos.thy)).
 -   [Pruebas de a+aq+aq²+···+aqⁿ = a(1-qⁿ⁺¹)/(1-q)](./textos/Suma_de_progresion_geometrica.md) (En [Lean](./src/Suma_de_progresion_geometrica.lean) y en [Isabelle](./thy/Suma_de_progresion_geometrica.thy)).
 -   [Pruebas de a+(a+d)+(a+2d)+···+(a+nd)=(n+1)(2a+nd)/2](./textos/Suma_de_progresion_aritmetica.md) (En [Lean](./src/Suma_de_progresion_aritmetica.lean) y en [Isabelle](./thy/Suma_de_progresion_aritmetica.thy)).
 -   [Pruebas de 0+1+2+3+···+n=n(n+1)/2](./textos/Suma_de_los_primeros_n_numeros_naturales.md) (En [Lean](./src/Suma_de_los_primeros_n_numeros_naturales.lean) y en [Isabelle](./thy/Suma_de_los_primeros_n_numeros_naturales.thy)).
