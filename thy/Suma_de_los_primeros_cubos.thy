@@ -1,5 +1,5 @@
 (* Suma_de_los_primeros_cubos.thy
--- Pruebas de 0³+1³+2³+3³+···+n³ = (n(n+1)/2)²
+-- Pruebas de 0³+1³+2³+3³+\<sqdot>\<sqdot>\<sqdot>+n³ = (n(n+1)/2)²
 -- José A. Alonso Jiménez <https://jaalonso.github.io>
 -- Sevilla, 9-septiembre-2024
 -- ------------------------------------------------------------------ *)
