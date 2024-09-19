@@ -4,6 +4,7 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 
 # Ejercicios más recientes
 
+-   [Pruebas de "∑<sub>i<n</sub> i = n(n-1)/2"](./textos/Formula_de_Gauss_de_la_suma.md) (En [Lean](./src/Formula_de_Gauss_de_la_suma.lean) y en [Isabelle](./thy/Formula_de_Gauss_de_la_suma.thy)).
 -   [Pruebas de (1+p)<sup>n</sup> mayor o igual que 1+np](./textos/Prueba_de_(1+p)^n_mayor_o_igual_que_1+np.md) (En [Lean](./src/Prueba_de_(1+p)^n_mayor_o_igual_que_1+np.lean) y en [Isabelle](./thy/Prueba_de_(1+p)^n_mayor_o_igual_que_1+np.thy)).
 -   [Pruebas de 0³+1³+2³+3³+···+n³ = (n(n+1)/2)²](./textos/Suma_de_los_primeros_cubos.md) (En [Lean](./src/Suma_de_los_primeros_cubos.lean) y en [Isabelle](./thy/Suma_de_los_primeros_cubos.thy)).
 -   [Pruebas de a+aq+aq²+···+aqⁿ = a(1-qⁿ⁺¹)/(1-q)](./textos/Suma_de_progresion_geometrica.md) (En [Lean](./src/Suma_de_progresion_geometrica.lean) y en [Isabelle](./thy/Suma_de_progresion_geometrica.thy)).
