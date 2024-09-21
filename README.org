@@ -2,7 +2,7 @@
 #+OPTIONS: toc:nil
 
 Este repositorio contienen las soluciones en Lean4 e Isabelle/HOL de los
-Ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calculemus]].
+ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calculemus]].
 
 * Ejercicios más recientes
 + [[./textos/Formula_de_Gauss_de_la_suma.md][Pruebas de "∑_{i<n} i = n(n-1)/2"]] (En [[./src/Formula_de_Gauss_de_la_suma.lean][Lean]] y en [[./thy/Formula_de_Gauss_de_la_suma.thy][Isabelle]]).
