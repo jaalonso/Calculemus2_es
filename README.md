@@ -4,6 +4,7 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 
 # Ejercicios más recientes
 
+-   [Si f ∘ f es biyectiva, entonces f es biyectiva](./textos/Si_ff_es_biyectiva_entonces_f_es_biyectiva.md) (En [Lean](./src/Si_ff_es_biyectiva_entonces_f_es_biyectiva.lean) y en [Isabelle](./thy/Si_ff_es_biyectiva_entonces_f_es_biyectiva.thy)).
 -   [Identidad de Brahmagupta-Fibonacci](./textos/Identidad_de_Brahmagupta-Fibonacci.md) (En [Lean](./src/Identidad_de_Brahmagupta-Fibonacci.lean) y en [Isabelle](./thy/Identidad_de_Brahmagupta-Fibonacci.thy)).
 -   [Pruebas de ∑k<n. 2<sup>k</sup> = 2<sup>n</sup>-1](./textos/Suma_de_potencias_de_dos.md) (En [Lean](./src/Suma_de_potencias_de_dos.lean) y en [Isabelle](./thy/Suma_de_potencias_de_dos.thy)).
 -   [Pruebas de "∑<sub>i<n</sub> i = n(n-1)/2"](./textos/Formula_de_Gauss_de_la_suma.md) (En [Lean](./src/Formula_de_Gauss_de_la_suma.lean) y en [Isabelle](./thy/Formula_de_Gauss_de_la_suma.thy)).

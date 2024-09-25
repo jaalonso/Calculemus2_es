@@ -62,3 +62,16 @@ by
   -- x : X
   -- hx : (g ∘ f) x = z
   exact ⟨f x, hx⟩
+
+-- 2ª demostración
+-- ===============
+
+example
+  (h : Surjective (g ∘ f))
+  : Surjective g :=
+Surjective.of_comp h
+
+-- Lemas usados
+-- ============
+
+-- #check (Surjective.of_comp : Surjective (g ∘ f) → Surjective g)

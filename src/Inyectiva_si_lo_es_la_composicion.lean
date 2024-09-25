@@ -63,8 +63,17 @@ by
   -- ⊢ g (f a) = g (f b)
   rw [hab]
 
+-- 2ª demostración
+-- ===============
+
+example
+  (h : Injective (g ∘ f))
+  : Injective f :=
+Injective.of_comp h
+
 -- Lemas usados
 -- ============
 
 -- variable (x : X)
 -- #check (Function.comp_apply : (g ∘ f) x = g (f x))
+-- #check (Injective.of_comp : Injective (g ∘ f) → Injective f)
