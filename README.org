@@ -5,6 +5,7 @@ Este repositorio contienen las soluciones en Lean4 e Isabelle/HOL de los
 ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calculemus]].
 
 * Ejercicios más recientes
++ [[./textos/Principio_del_palomar.md][Principio_del_palomar]] (En [[./src/Principio_del_palomar.lean][Lean4]]).
 + [[./textos/Si_ff_es_biyectiva_entonces_f_es_biyectiva.md][Si f ∘ f es biyectiva, entonces f es biyectiva]] (En [[./src/Si_ff_es_biyectiva_entonces_f_es_biyectiva.lean][Lean]] y en [[./thy/Si_ff_es_biyectiva_entonces_f_es_biyectiva.thy][Isabelle]]).
 + [[./textos/Identidad_de_Brahmagupta-Fibonacci.md][Identidad de Brahmagupta-Fibonacci]] (En [[./src/Identidad_de_Brahmagupta-Fibonacci.lean][Lean]] y en [[./thy/Identidad_de_Brahmagupta-Fibonacci.thy][Isabelle]]).
 + [[./textos/Suma_de_potencias_de_dos.md][Pruebas de ∑k<n. 2^k = 2^n-1]] (En [[./src/Suma_de_potencias_de_dos.lean][Lean]] y en [[./thy/Suma_de_potencias_de_dos.thy][Isabelle]]).
