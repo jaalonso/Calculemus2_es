@@ -4,6 +4,7 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 
 # Ejercicios más recientes
 
+-   [Si el límite de u(n) es a, entonces el de 7u(n) es 7a](./textos/Limite_de_7u.md) (En [Lean4](./src/Limite_de_7u.lean)).
 -   [Principio<sub>del</sub><sub>palomar</sub>](./textos/Principio_del_palomar.md) (En [Lean4](./src/Principio_del_palomar.lean)).
 -   [Si f ∘ f es biyectiva, entonces f es biyectiva](./textos/Si_ff_es_biyectiva_entonces_f_es_biyectiva.md) (En [Lean](./src/Si_ff_es_biyectiva_entonces_f_es_biyectiva.lean) y en [Isabelle](./thy/Si_ff_es_biyectiva_entonces_f_es_biyectiva.thy)).
 -   [Identidad de Brahmagupta-Fibonacci](./textos/Identidad_de_Brahmagupta-Fibonacci.md) (En [Lean](./src/Identidad_de_Brahmagupta-Fibonacci.lean) y en [Isabelle](./thy/Identidad_de_Brahmagupta-Fibonacci.thy)).
