@@ -4,6 +4,7 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 
 # Ejercicios más recientes
 
+-   [Si uₙ converge a a y vₙ a b, entonces uₙvₙ converge a ab](./textos/Convergencia_del_producto.md) (En [Lean4](./src/Convergencia_de_producto.lean)).
 -   [Si el límite de la sucesión u(n) es a y c ∈ ℝ, entonces el límite de u(n)c es ac](./textos/Limite_multiplicado_por_una_constante_2.md) (En [Lean](./src/Limite_multiplicado_por_una_constante_2.lean)).
 -   [Si el límite de u(n) es a, entonces el de 7u(n) es 7a](./textos/Limite_de_7u.md) (En [Lean4](./src/Limite_de_7u.lean)).
 -   [Principio<sub>del</sub><sub>palomar</sub>](./textos/Principio_del_palomar.md) (En [Lean4](./src/Principio_del_palomar.lean)).

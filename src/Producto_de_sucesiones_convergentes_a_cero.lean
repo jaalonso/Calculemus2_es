@@ -20,7 +20,7 @@
 -- ================================
 
 -- Sea ε ∈ ℝ tal que ε > 0. Tenemos ue demostrar que
---    (∃N ∈ ℕ)(∀n ≥ N)[|(uv)(n) - 0| < ε]                         (1)
+--    (∃N ∈ ℕ)(∀n ≥ N)[|(uv)(n) - 0| < ε]                            (1)
 -- Puesto que el límite de uₙ es 0, existe un U ∈ ℕ tal que
 --    (∀n ≥ U)[|u(n) - 0| < ε]                                       (2)
 -- y, puesto que el límite de vₙ es 0, existe un V ∈ ℕ tal que
