@@ -5,14 +5,12 @@ category: Inducción
 has_math: true
 ---
 
-[mathjax]
-
 Demostrar el [teorema de Nicómaco](http://bit.ly/2OaJI7q) que afirma que la suma de los cubos de los \\(n\\) primeros números naturales es igual que el cuadrado de la suma de los \\(n\\) primeros números naturales; es decir, para todo número natural n se tiene que
 \\[ 1^3 + 2^3 + ... + n^3 = (1 + 2 + ... + n)^2 \\]
 
 Para ello, completar la siguiente teoría de Lean4:
 
-<pre lang="lean">
+~~~lean
 import Mathlib.Data.Nat.Defs
 import Mathlib.Tactic
 
@@ -31,23 +29,24 @@ def sumaCubos : ℕ → ℕ
 example :
   sumaCubos n = (suma n)^2 :=
 by sorry
-</pre>
-<!--more-->
+~~~
+<!-- TEASER_END -->
 
-<h2>1. Demostración en lenguaje natural</h2>
+# 1. Demostración en lenguaje natural
 
 Es consecuencia de las fórmulas de la suma de los primeros \\(n\\) números naturales y la de los cubos de los primeros \\(n\\) números naturales; es decir,
 
-+ Lema 1: \\(1 + 2 + ... + n = \\dfrac{n(n+1)}{2} \\)
-+ Lema 2: \\(1^3 + 2^3 + ... + n^3 = \\dfrac{n(n+1))^2}{4} \\)
++ Lema 1: \\[1 + 2 + ... + n = \\dfrac{n(n+1)}{2} \\]
++ Lema 2: \\[1^3 + 2^3 + ... + n^3 = \\dfrac{(n(n+1))^2}{4} \\]
 
 En efecto,
+
 \\begin{align}
 1^3 + 2^3 + ... + n^3
-&= \\dfrac{n(n+1))^2}{4}               &&\\text}[por el Lema 2]} \\\\
-&= \\dfrac{2(1 + 2 + ... + n)^2}{4}    &&\\text{[por el Lema 1]} \\\\
+&= \\dfrac{(n(n+1))^2}{4}               &&\\text{[por el Lema 2]} \\newline
+&= \\dfrac{2(1 + 2 + ... + n)^2}{4}    &&\\text{[por el Lema 1]} \\newline
 &= (1 + 2 + ... + n)^2
-\\end{alig}
+\\end{align}
 
 El Lema 1 es equivalente a
 \\[ 2(1 + 2 + ... + n) = n(n+1) \\]
@@ -61,9 +60,9 @@ Paso de inducción: Supongamos la hipótesis de inducción:
 Entonces,
 \\begin{align}
 2(1 + 2 + ... + n + (n+1))
-&= 2(1 + 2 + ... + n) + 2(n+1) \\\\
-&= n(n+1) + 2(n+1)             &&\\text{[por la HI]} \\\\
-&= (n+2)(n+1)                  \\\\
+&= 2(1 + 2 + ... + n) + 2(n+1) \\newline
+&= n(n+1) + 2(n+1)             &&\\text{[por la HI]} \\newline
+&= (n+2)(n+1)                  \\newline
 &= (n+1)((n+1)+1)
 \\end{align}
 
@@ -78,15 +77,15 @@ Paso de inducción: Supongamos la hipótesis de inducción:
 Entonces,
 \\begin{align}
 4(1^3 + 2^3 + ... + n^3 + (n+1)^3)
-&= 4(1^3 + 2^3 + ... + n^3) + 4(n+1)^3 \\\\
-&= (n(n+1))^2 + 4(n+1)^3             \\\\
-&= (n+1)^2(n^2 + 4n + 4)             \\\\
-&= ((n+1)(n+2))^2
+&= 4(1^3 + 2^3 + ... + n^3) + 4(n+1)^3 \\newline
+&= (n(n+1))^2 + 4(n+1)^3             \\newline
+&= (n+1)^2(n^2 + 4n + 4)             \\newline
+&= ((n+1)((n+1)+1))^2
 \\end{align}
 
-<h2>2. Demostraciones con Lean4</h2>
+# 2. Demostraciones con Lean4
 
-<pre lang="lean">
+~~~lean
 import Mathlib.Data.Nat.Defs
 import Mathlib.Tactic
 
@@ -270,11 +269,77 @@ by
 -- #check (mul_comm a b : a * b = b * a)
 -- #check (mul_zero a : a * 0 = 0)
 -- #check (zero_mul a : 0 * a = 0)
-</pre>
+~~~
 
 Se puede interactuar con las demostraciones anteriores en [Lean 4 Web](https://live.lean-lang.org/#url=https://raw.githubusercontent.com/jaalonso/Calculemus2_es/main/src/Teorema_de_Nicomaco.lean).
 
-<h2>3. Demostraciones con Isabelle/HOL</h2>
+# 3. Demostraciones con Isabelle/HOL
 
-<pre lang="isar">
-</pre>
+~~~isabelle
+theory Teorema_de_Nicomaco
+imports Main
+begin
+
+(* (suma n) es la suma de los primeros números naturales. *)
+fun suma :: "nat ⇒ nat" where
+  "suma 0 = 0"
+| "suma (Suc n) = suma n + Suc n"
+
+(* (sumaCubos n) es la suma de los cubos primeros números naturales. *)
+fun sumaCubos :: "nat ⇒ nat" where
+  "sumaCubos 0 = 0"
+| "sumaCubos (Suc n) = sumaCubos n + (Suc n)^3"
+
+(* Fórmula para la suma *)
+lemma "2 * suma n = n^2 + n"
+proof (induct n)
+  show "2 * suma 0 = 0^2 + 0" by simp
+next
+  fix n
+  assume "2 * suma n = n^2 + n"
+  then have "2 * suma (Suc n) = n^2 + n + 2 + 2 * n"
+    by simp
+  also have "… = (Suc n)^2 + Suc n"
+    by (simp add: power2_eq_square)
+  finally show "2 * suma (Suc n) = (Suc n)^2 + Suc n"
+    by this
+qed
+
+(* Demostración automática de la propiedad anterior *)
+lemma formula_suma:
+  "2 * suma n = n^2 + n"
+  by (induct n) (auto simp add: power2_eq_square)
+
+lemma "4 * sumaCubos n = (n^2 + n)^2"
+proof (induct n)
+  show "4 * sumaCubos 0 = (0^2 + 0)^2"
+    by simp
+next
+  fix n
+  assume "4 * sumaCubos n = (n^2 + n)^2"
+  then have "4 * sumaCubos (Suc n) = (n^2 + n)^2 + 4 * (Suc n)^3"
+    by simp
+  then show "4 * sumaCubos (Suc n) = ((Suc n)^2 + Suc n)^2"
+  by (simp add: algebra_simps
+                power2_eq_square
+                power3_eq_cube )
+qed
+
+(* Demostración automática de la propiedad anterior *)
+lemma formula_sumaCubos:
+  "4 * sumaCubos n = (n^2 + n)^2"
+  by (induct n) (auto simp add: algebra_simps
+                                power2_eq_square
+                                power3_eq_cube)
+
+(* Lema auxiliar *)
+lemma aux: "4 * (m::nat) = (2 * n)^2 ⟹ m = n^2"
+  by (simp add: power2_eq_square)
+
+(* Teorema de Nicómaco *)
+theorem teorema_de_Nicomaco:
+  "sumaCubos n = (suma n)^2"
+  by (simp only: formula_suma formula_sumaCubos aux)
+
+end
+~~~
