@@ -5,6 +5,7 @@ Este repositorio contienen las soluciones en Lean4 e Isabelle/HOL de los
 ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calculemus]].
 
 * Ejercicios más recientes
++ [[./textos/Teorema_de_Nicomaco.md][Teorema de Nicómaco]] (En [[./src/Teorema_de_Nicomaco.lean][Lean4]] y en [[./thy/Teorema de Nicomaco.thy][Isabelle]]).
 + [[./textos/Convergencia_del_producto.md][Si uₙ converge a a y vₙ a b, entonces uₙvₙ converge a ab]] (En [[./src/Convergencia_de_producto.lean][Lean4]]).
 + [[./textos/Limite_multiplicado_por_una_constante_2.md][Si el límite de la sucesión u(n) es a y c ∈ ℝ, entonces el límite de u(n)c es ac]] (En [[./src/Limite_multiplicado_por_una_constante_2.lean][Lean]]).
 + [[./textos/Limite_de_7u.md][Si el límite de u(n) es a, entonces el de 7u(n) es 7a]] (En [[./src/Limite_de_7u.lean][Lean4]]).
