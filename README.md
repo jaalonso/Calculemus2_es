@@ -10,6 +10,7 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 
 ### Enero 2025
 
+-   21 [Praeclarum theorema](./textos/2025/01/21-Praeclarum_theorema.md) (En [Lean4](./src/Praeclarum_theorema.lean) y en [Isabelle](./thy/Praeclarum_theorema.thy)).
 -   03 [Teorema de Nicómaco](./textos/Teorema_de_Nicomaco.md) (En [Lean4](./src/Teorema_de_Nicomaco.lean) y en [Isabelle](./thy/Teorema de Nicomaco.thy)).
 
 

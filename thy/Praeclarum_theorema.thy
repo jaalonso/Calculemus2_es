@@ -1,3 +1,15 @@
+(* Praeclarum_theorema.thy
+-- Praeclarum theorema
+-- José A. Alonso Jiménez <https://jaalonso.github.io>
+-- Sevilla, 21-enero-2025
+-- ------------------------------------------------------------------ *)
+
+(* ---------------------------------------------------------------------
+-- Demostrar el [praeclarum theorema](https://tinyurl.com/25yt3ef9) de
+-- Leibniz:
+--    (p → q) ∧ (r → s) → ((p ∧ r) → (q ∧ s))
+-- ------------------------------------------------------------------ *)
+
 theory Praeclarum_theorema
 imports Main
 begin
@@ -37,7 +49,7 @@ proof
     next
       have "r \<longrightarrow> s" using \<open>(p \<longrightarrow> q) \<and> (r \<longrightarrow> s)\<close> ..
       moreover have "r" using \<open>p \<and> r\<close> ..
-      ultimately show "s" ..   
+      ultimately show "s" ..
     qed
   qed
 qed

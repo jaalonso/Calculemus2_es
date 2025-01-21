@@ -9,6 +9,7 @@ ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calcul
 ** 2025
 
 *** Enero 2025
++ 21 [[./textos/2025/01/21-Praeclarum_theorema.md][Praeclarum theorema]] (En [[./src/Praeclarum_theorema.lean][Lean4]] y en [[./thy/Praeclarum_theorema.thy][Isabelle]]).
 + 03 [[./textos/Teorema_de_Nicomaco.md][Teorema de Nicómaco]] (En [[./src/Teorema_de_Nicomaco.lean][Lean4]] y en [[./thy/Teorema de Nicomaco.thy][Isabelle]]).
 
 ** 2024
