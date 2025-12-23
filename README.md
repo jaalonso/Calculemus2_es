@@ -8,6 +8,11 @@ ejercicios propuestos en el blog [Calculemus](https://jaalonso.github.io/calcule
 ## 2025
 
 
+### Diciembre 2025
+
+-   23 [La sucesión constante aₙ = L converge a L](https://jaalonso.github.io/calculemus/posts/2025/12/23-convergencia_de_la_sucesion_constante_v2/) (en [Lean4](./src/Convergencia_de_la_sucesion_constante_v2.lean))
+
+
 ### Enero 2025
 
 -   21 [Praeclarum theorema](./textos/2025/01/21-Praeclarum_theorema.md) (En [Lean4](./src/Praeclarum_theorema.lean) y en [Isabelle](./thy/Praeclarum_theorema.thy)).
@@ -666,4 +671,3 @@ Nota: La siguiente clasificación incluye solo los ejercicios hasta el 24 de jun
 -   [Si (∀n)[uₙ ≤ vₙ], entonces lim uₙ ≤ lim vₙ](./textos/Limite_de_sucesion_menor_que_otra_sucesion.md) (En [Lean](./src/Limite_de_sucesion_menor_que_otra_sucesion.lean) y en [Isabelle](./thy/Limite_de_sucesion_menor_que_otra_sucesion.thy)).
 -   [Si uₙ está acotada y lim vₙ = 0, entonces lim (uₙ·vₙ) = 0](./textos/Producto_de_una_sucesion_acotada_por_otra_convergente_a_cero.md) (En [Lean](./src/Producto_de_una_sucesion_acotada_por_otra_convergente_a_cero.lean) y en [Isabelle](./thy/Producto_de_una_sucesion_acotada_por_otra_convergente_a_cero.thy)).
 -   [Si el límite de la sucesión uₙ es a, entonces el límite de -uₙ es -a](./textos/Limite_de_la_opuesta.md) (En [Lean](./src/Limite_de_la_opuesta.lean) y en [Isabelle](./thy/Limite_de_la_opuesta.thy)).
-

@@ -9,7 +9,7 @@ ejercicios propuestos en el blog [[https://jaalonso.github.io/calculemus][Calcul
 ** 2025
 
 *** Diciembre 2025
-+ 23 [[./textos/Convergencia_de_la_sucesion_constante_v2.md][La sucesión constante sₙ = c converge a c]] (en [[./src/Convergencia_de_la_sucesion_constante_v2.lean][Lean4]])
++ 23 [[https://jaalonso.github.io/calculemus/posts/2025/12/23-convergencia_de_la_sucesion_constante_v2/][La sucesión constante aₙ = L converge a L]] (en [[./src/Convergencia_de_la_sucesion_constante_v2.lean][Lean4]])
 
 *** Enero 2025
 + 21 [[./textos/2025/01/21-Praeclarum_theorema.md][Praeclarum theorema]] (En [[./src/Praeclarum_theorema.lean][Lean4]] y en [[./thy/Praeclarum_theorema.thy][Isabelle]]).
